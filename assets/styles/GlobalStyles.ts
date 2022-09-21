@@ -18,6 +18,14 @@ declare module "styled-components" {
       laptop?: string;
       laptopL?: string;
     };
+    mobileS?: string;
+    mobileM?: string;
+    mobileL?: string;
+    tabletS?: string;
+    tabletM?: string;
+    tabletL?: string;
+    laptop?: string;
+    laptopL?: string;
   }
 }
 
