@@ -11,7 +11,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Head key={1}>
+      <Head>
         <link rel="rel" href="../../public/favicon.ico" />
         <meta
           name="description"

@@ -2,8 +2,8 @@ import React from "react";
 
 type Props = {};
 
-const AboutMe = (props: Props) => {
+const index = (props: Props) => {
   return <div>AboutMe</div>;
 };
 
-export default AboutMe;
+export default index;
