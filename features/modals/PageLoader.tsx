@@ -2,6 +2,11 @@ import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Context from "../../context/context";
+import {
+  SpinnerContainer,
+  SpinnerText,
+  SpinnerWrapper,
+} from "../../components/SpinnerComponenets";
 
 const PageLoader = () => {
   const context = useContext(Context);
@@ -14,7 +19,7 @@ const PageLoader = () => {
       setTimeout(() => {
         setLoading(false);
         context.toggleInitialLoad();
-      }, 1000);
+      }, 600);
     }
   }, [context]);
 
@@ -25,7 +30,7 @@ const PageLoader = () => {
       url === router.asPath &&
       setTimeout(() => {
         setLoading(false);
-      }, 1000);
+      }, 600);
 
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
@@ -40,11 +45,11 @@ const PageLoader = () => {
 
   return (
     loading && (
-      <div className="loading-wrapper">
-        <div className="spinner-box">
-          <p className="spinner-text">M</p>
-        </div>
-      </div>
+      <SpinnerWrapper>
+        <SpinnerContainer>
+          <SpinnerText>M</SpinnerText>
+        </SpinnerContainer>
+      </SpinnerWrapper>
     )
   );
 };
