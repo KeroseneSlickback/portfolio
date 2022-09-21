@@ -35,7 +35,7 @@ const LogoLink = styled.a`
 `;
 
 const MobileNavToggleContainer = styled.div`
-  z-index: 9999;
+  z-index: 100;
   position: relative;
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@ const MobileNavSpan = styled.span`
   border-radius: 2px;
   width: 26px;
   height: 3px;
-  z-index: 1000;
+  z-index: 100;
   transition: all 0.2s ease-in-out;
 `;
 

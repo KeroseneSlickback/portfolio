@@ -33,6 +33,7 @@ const spin = keyframes`
 `;
 
 export const SpinnerWrapper = styled.div`
+  z-index: 888;
   height: 100vh;
   width: 100vw;
   display: flex;
