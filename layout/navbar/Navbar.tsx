@@ -8,7 +8,6 @@ const NavBarHeader = styled.header`
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  z-index: 100;
 `;
 
 const NavBarContainer = styled.div`
@@ -24,7 +23,6 @@ const LogoLink = styled.a`
   border: 4px solid ${({ theme }) => theme.colors.greenHighlight};
   height: 50px;
   width: 50px;
-  z-index: 100;
   position: relative;
   display: flex;
   align-items: center;
@@ -35,7 +33,6 @@ const LogoLink = styled.a`
 `;
 
 const MobileNavToggleContainer = styled.div`
-  z-index: 100;
   position: relative;
   display: flex;
   align-items: center;
@@ -81,7 +78,7 @@ const MobileNavSpan = styled.span`
   border-radius: 2px;
   width: 26px;
   height: 3px;
-  z-index: 100;
+
   transition: all 0.2s ease-in-out;
 `;
 
@@ -123,7 +120,6 @@ const MobileBackdrop = styled.div<{ open?: boolean }>`
   ${(props) =>
     props.open &&
     css`
-      z-index: 100;
       background-color: rgba(0, 0, 0, 0.75);
     `}
 `;
