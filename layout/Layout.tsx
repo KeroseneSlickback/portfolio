@@ -11,14 +11,6 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Head>
-        <link rel="rel" href="../../public/favicon.ico" />
-        <meta
-          name="description"
-          content="Portfolio for Mitchell William Spaur"
-        />
-        <meta name="og:title" content="Mitchell William Spaur's portfolio" />
-      </Head>
       <Navbar />
       <MainBody>{children}</MainBody>
       <Footer />

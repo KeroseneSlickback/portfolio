@@ -14,7 +14,7 @@ const PageLoader = () => {
       setTimeout(() => {
         setLoading(false);
         context.toggleInitialLoad();
-      }, 1600);
+      }, 2000);
     }
   }, [context]);
 
@@ -25,7 +25,7 @@ const PageLoader = () => {
       url === router.asPath &&
       setTimeout(() => {
         setLoading(false);
-      }, 1600);
+      }, 2000);
 
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
@@ -40,8 +40,8 @@ const PageLoader = () => {
 
   return (
     loading && (
-      <div className="spinner-wrapper">
-        <div className="spinner" />
+      <div className="loading-wrapper">
+        <div className="spinner">M</div>
       </div>
     )
   );
