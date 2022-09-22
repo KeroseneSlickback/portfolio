@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import styled, { css } from "styled-components";
+import { devices } from "../../assets/styles/GlobalStyles";
 
 const NavBarHeader = styled.header`
   width: 100%;
@@ -17,55 +18,89 @@ const NavBarContainer = styled.div`
   align-items: center;
 `;
 
-const LogoLinkWrapper = styled.div``;
-
 const LogoLink = styled.a`
-  border: 4px solid ${({ theme }) => theme.colors.greenHighlight};
-  height: 50px;
-  width: 50px;
+  border: 2px solid ${({ theme }) => theme.colors.greenHighlight};
+  height: 40px;
+  width: 40px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.textPrimary};
-  font-size: 2.5rem;
+  font-size: 2rem;
 `;
 
 const MobileNavToggleContainer = styled.div`
-  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-left: auto;
-  height: 36px;
-  width: 36px;
-  background-color: inherit;
-  border: 2px solid $purple2;
-  transform: translate(2px, 2px);
-  @media ${({ theme }) => theme.tabletM} {
+  justify-content: center;
+  height: 31px;
+  width: 31px;
+  @media ${devices.tabletM} {
     display: none;
   }
 `;
 
 const MobileNavToggle = styled.button`
-  padding: 0;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: $purple2;
+  background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+  box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.backgroundPrimary};
   border: none;
   transition: 0.08s;
-  transform: translate(-4px, -4px);
+  margin: 0 8px 0 0;
+
+  &:after {
+    transition: 0.2s;
+    position: absolute;
+    content: "";
+    bottom: -4px;
+    right: -4px;
+    background: #67dea2;
+    width: 80%;
+    height: 80%;
+    z-index: -1;
+  }
+
+  &:before {
+    transition: 0.2s;
+    position: absolute;
+    content: "";
+    top: -4px;
+    left: -4px;
+    background: #67dea2;
+    width: 80%;
+    height: 80%;
+    z-index: -1;
+  }
   &:hover {
-    background-color: $purple3;
-    color: $purple2;
+    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.backgroundSecondary};
+    &:after {
+      width: 125%;
+      height: 125%;
+    }
+    &:before {
+      width: 125%;
+      height: 125%;
+    }
   }
   &:active {
-    transform: translate(0px, 0px);
+    background-color: ${({ theme }) => theme.colors.blueOverlay};
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.blueOverlay};
+    &:after {
+      background-color: ${({ theme }) => theme.colors.blueHighlight};
+    }
+    &:before {
+      background-color: ${({ theme }) => theme.colors.blueHighlight};
+    }
   }
 `;
 
@@ -74,10 +109,9 @@ const MobileNavSpan = styled.span`
   padding: 0;
   border: none;
   display: block;
-  background: $yellow3;
-  border-radius: 2px;
-  width: 26px;
-  height: 3px;
+  background: ${({ theme }) => theme.colors.textPrimary};
+  width: 20px;
+  height: 2px;
 
   transition: all 0.2s ease-in-out;
 `;
