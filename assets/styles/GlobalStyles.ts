@@ -5,18 +5,11 @@ declare module "styled-components" {
     colors: {
       backgroundPrimary?: string;
       backgroundSecondary?: string;
+      backgroundHighlight?: string;
       textPrimary?: string;
       greenHighlight?: string;
       blueHighlight?: string;
       blueOverlay?: string;
-      mobileS?: string;
-      mobileM?: string;
-      mobileL?: string;
-      tabletS?: string;
-      tabletM?: string;
-      tabletL?: string;
-      laptop?: string;
-      laptopL?: string;
     };
     mobileS?: string;
     mobileM?: string;
@@ -33,6 +26,7 @@ export const theme = {
   colors: {
     backgroundPrimary: "#17082F",
     backgroundSecondary: "#1D1343",
+    backgroundHighlight: "#1A0D35",
     textPrimary: "#EBEBF2",
     greenHighlight: "#67DEA2",
     blueHighlight: "#68A7FF",

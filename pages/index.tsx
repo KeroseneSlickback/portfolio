@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ShowcaseSection from "../features/ShowcaseSection";
 import Layout from "../layout/Layout";
 
 export default function Home() {
@@ -11,10 +12,7 @@ export default function Home() {
       </Head>
       <Layout>
         <>
-          <h1>Home</h1>
-          <Link href="/about" passHref>
-            To About Page
-          </Link>
+          <ShowcaseSection></ShowcaseSection>
         </>
       </Layout>
     </>

@@ -13,11 +13,11 @@ interface Props {
 }
 
 const StyledMain = styled.main`
+  padding-bottom: 2rem;
   flex-grow: 1;
   align-self: stretch;
   display: flex;
   align-items: center;
-  background-color: white;
 `;
 
 const StyledSideBarWrapper = styled.div`
@@ -107,7 +107,14 @@ const Sidebar = () => {
 };
 
 const MainBodyWrapper = styled.div`
-  margin-left: 5.5rem;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 7.5rem);
+  @media ${devices.tabletM} {
+    margin-left: 5.5rem;
+  }
 `;
 
 const MainBody = ({ children }: Props) => {
