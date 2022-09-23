@@ -43,7 +43,7 @@ const LogoLink = styled.a`
     border: 2px solid ${({ theme }) => theme.colors.blueHighlight};
   }
   @media ${devices.tabletM} {
-    font-size: 3.25rem;
+    font-size: 3rem;
   }
 `;
 
@@ -295,6 +295,29 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   }
 
   div {
+    a {
+      all: revert;
+      display: flex;
+      align-items: center;
+      transition: 0.2s;
+      border: 2px solid ${({ theme }) => theme.colors.blueOverlay};
+      padding: 0.5rem;
+      &:hover {
+        border: 2px solid ${({ theme }) => theme.colors.blueHighlight};
+      }
+      &:active {
+        border: 2px solid ${({ theme }) => theme.colors.textPrimary};
+      }
+      &:after {
+        all: revert;
+      }
+      &:before {
+        all: revert;
+      }
+    }
+  }
+
+  div {
     justify-content: space-evenly;
     width: 100%;
     padding: 0 16%;
@@ -373,9 +396,27 @@ const Navbar = () => {
               <a href="">Resume</a>
             </li>
             <div>
-              <Image src={github} alt="github" />
-              <Image src={linkedin} alt="linkedin" />
-              <Image src={email} alt="email" />
+              <a
+                href="https://www.github.com/KeroseneSlickback"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Image src={github} alt="github" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mitchell-spaur-597b23143"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Image src={linkedin} alt="linkedin" />
+              </a>
+              <a
+                href="mailto:mitchellspaur@gmail.com"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Image src={email} alt="email" />
+              </a>
             </div>
           </NavBarUL>
         </nav>
