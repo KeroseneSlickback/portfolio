@@ -8,10 +8,15 @@ import linkedin from "../../assets/svgs/linkedin.svg";
 import email from "../../assets/svgs/email.svg";
 
 const NavBarHeader = styled.header`
+  background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+  position: fixed;
   width: 100%;
   height: fit-content;
   display: flex;
   align-items: center;
+  @media ${devices.tabletM} {
+    position: relative;
+  }
 `;
 
 const NavBarContainer = styled.div`
