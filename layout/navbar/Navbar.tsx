@@ -10,7 +10,6 @@ import email from "../../assets/svgs/email.svg";
 const NavBarHeader = styled.header`
   width: 100%;
   height: fit-content;
-  padding: 0.5rem;
   display: flex;
   align-items: center;
 `;
@@ -21,23 +20,31 @@ const NavBarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0.5rem;
   @media ${devices.tabletM} {
-    margin: 0 auto;
-    max-width: 54rem;
+    margin: 1rem;
+    height: 3.5rem;
   }
 `;
 
 const LogoLink = styled.a`
   border: 2px solid ${({ theme }) => theme.colors.greenHighlight};
-  height: 40px;
-  width: 40px;
+  height: 100%;
+  aspect-ratio: 1/1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.textPrimary};
-  font-size: 2rem;
+  font-size: 2.4125rem;
+
+  &:hover {
+    border: 2px solid ${({ theme }) => theme.colors.blueHighlight};
+  }
+  @media ${devices.tabletM} {
+    font-size: 3.25rem;
+  }
 `;
 
 const MobileNavToggleContainer = styled.div`
@@ -45,8 +52,8 @@ const MobileNavToggleContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 31px;
-  width: 31px;
+  height: calc(100% - 0.5rem);
+  aspect-ratio: 1/1;
   margin-left: auto;
   @media ${devices.tabletM} {
     display: none;
@@ -59,13 +66,14 @@ const MobileNavToggle = styled.button<{ open?: boolean }>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   height: 100%;
-  width: 100%;
+  aspect-ratio: 1/1;
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
   box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.backgroundPrimary};
   border: none;
   transition: 0.08s;
-  margin: 0 8px 0 0;
+  margin: 0 6px 0 0;
 
   &:after {
     transition: 0.2s;
@@ -94,12 +102,12 @@ const MobileNavToggle = styled.button<{ open?: boolean }>`
     background-color: ${({ theme }) => theme.colors.backgroundSecondary};
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.backgroundSecondary};
     &:after {
-      width: 125%;
-      height: 125%;
+      width: 120%;
+      height: 120%;
     }
     &:before {
-      width: 125%;
-      height: 125%;
+      width: 120%;
+      height: 120%;
     }
   }
   &:active {
@@ -116,13 +124,13 @@ const MobileNavToggle = styled.button<{ open?: boolean }>`
     props.open &&
     css`
       &:after {
-        width: 125%;
-        height: 125%;
+        width: 120%;
+        height: 120%;
         background-color: ${({ theme }) => theme.colors.blueHighlight};
       }
       &:before {
-        width: 125%;
-        height: 125%;
+        width: 120%;
+        height: 120%;
         background-color: ${({ theme }) => theme.colors.blueHighlight};
       }
     `}
@@ -134,18 +142,18 @@ const MobileNavSpan = styled.span`
   border: none;
   display: block;
   background: ${({ theme }) => theme.colors.textPrimary};
-  width: 20px;
+  width: 26px;
   height: 2px;
   transition: all 0.2s linear;
 `;
 
 const MobileNavSpan1 = styled(MobileNavSpan)<{ open?: boolean }>`
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   ${(props) =>
     props.open &&
     css`
       transform: translateY(2px) rotate(45deg);
-      width: 30px;
+      width: 36px;
     `}
 `;
 const MobileNavSpan2 = styled(MobileNavSpan)<{ open?: boolean }>`
@@ -157,27 +165,12 @@ const MobileNavSpan2 = styled(MobileNavSpan)<{ open?: boolean }>`
     `}
 `;
 const MobileNavSpan3 = styled(MobileNavSpan)<{ open?: boolean }>`
-  transform: translateY(4px);
+  transform: translateY(6px);
   ${(props) =>
     props.open &&
     css`
       transform: translateY(-2px) rotate(-45deg);
-      width: 30px;
-    `}
-`;
-
-const MobileBackdrop = styled.div<{ open?: boolean }>`
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  transition: all 0.2s ease-in-out;
-  ${(props) =>
-    props.open &&
-    css`
-      background-color: rgba(0, 0, 0, 0.75);
+      width: 36px;
     `}
 `;
 
@@ -191,11 +184,11 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: ${({ theme }) => theme.colors.backgroundPrimary}; */
-  /* padding: min(4rem, 10rem) 1rem; */
   padding: 4rem 0rem 0rem 0rem;
   margin: 0;
   list-style-type: none;
+  transition: all 0.1s ease-in-out;
+  transform: translateX(100%);
   li,
   div {
     transition: all 0.2s ease-in-out;
@@ -230,7 +223,6 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
     position: relative;
     font-size: 1.75rem;
     line-height: 1;
-    /* background: ${({ theme }) => theme.colors.backgroundPrimary}; */
     color: ${({ theme }) => theme.colors.textPrimary};
     transition: 0.15s;
     padding: 0.5rem 0.75rem;
@@ -279,6 +271,29 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
     }
   }
 
+  li {
+    &:nth-child(5) {
+      a {
+        margin: 0 0.5rem;
+        border: 2px solid ${({ theme }) => theme.colors.blueHighlight};
+        &:hover {
+          border-color: ${({ theme }) => theme.colors.textPrimary};
+          color: ${({ theme }) => theme.colors.textPrimary};
+        }
+        &:active {
+          border-color: ${({ theme }) => theme.colors.blueHighlight};
+          color: ${({ theme }) => theme.colors.textPrimary};
+        }
+      }
+      a:after {
+        content: none;
+      }
+      a:before {
+        content: none;
+      }
+    }
+  }
+
   div {
     justify-content: space-evenly;
     width: 100%;
@@ -288,6 +303,7 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   ${(props) =>
     props.open &&
     css`
+      transform: translateX(0%);
       li,
       div {
         transform: translateX(0%);
@@ -297,18 +313,25 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   @media ${devices.tabletM} {
     background: none;
     transform: none;
-    inset: initial;
     position: relative;
     flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1rem;
     padding: 0rem;
-    gap: 0rem;
+    li {
+      background: ${({ theme }) => theme.colors.backgroundPrimary};
+      transform: none;
+    }
     a {
-      font-size: 1.25rem;
-      padding: 0.325rem 0.5rem;
+      font-size: 1.126rem;
+      padding: 0.5rem 0.635rem;
+    }
+    div {
+      display: none;
     }
   }
-  @media ${devices.tabletL} {
-    gap: 0.625rem;
+  @media ${devices.laptop} {
+    gap: 2rem;
   }
 `;
 
