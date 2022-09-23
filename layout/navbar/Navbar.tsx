@@ -17,6 +17,7 @@ const NavBarHeader = styled.header`
 
 const NavBarContainer = styled.div`
   width: 100%;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -190,29 +191,49 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${({ theme }) => theme.colors.backgroundPrimary};
-  padding: min(4rem, 10rem) 1rem;
-  transform: translateX(100%);
+  /* background: ${({ theme }) => theme.colors.backgroundPrimary}; */
+  /* padding: min(4rem, 10rem) 1rem; */
+  padding: 4rem 0rem 0rem 0rem;
   margin: 0;
-  transition: all 0.2s ease-in-out;
   list-style-type: none;
   li,
   div {
+    transition: all 0.2s ease-in-out;
+    transform: translateX(100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: ${({ theme }) => theme.colors.backgroundPrimary};
+    background: ${({ theme }) => theme.colors.backgroundSecondary};
     height: 100%;
     width: 100%;
+    &:nth-child(2) {
+      transition-delay: 50ms;
+    }
+    &:nth-child(3) {
+      transition-delay: 100ms;
+    }
+    &:nth-child(4) {
+      transition-delay: 150ms;
+    }
+    &:nth-child(5) {
+      transition-delay: 200ms;
+    }
+    &:nth-child(6) {
+      transition-delay: 250ms;
+    }
+    &:nth-child(7) {
+      transition-delay: 300ms;
+    }
   }
 
   a {
     position: relative;
     font-size: 1.75rem;
-    background: ${({ theme }) => theme.colors.backgroundPrimary};
+    line-height: 1;
+    /* background: ${({ theme }) => theme.colors.backgroundPrimary}; */
     color: ${({ theme }) => theme.colors.textPrimary};
     transition: 0.15s;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     text-decoration: none;
   }
 
@@ -220,8 +241,8 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
     content: "";
     position: absolute;
     background-color: #67dea2;
-    height: 33%;
-    width: 3px;
+    height: 50%;
+    width: 2px;
     bottom: 0;
     right: 0;
     transition: 0.25s;
@@ -231,7 +252,7 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
     content: "";
     position: absolute;
     background-color: #67dea2;
-    height: 3px;
+    height: 2px;
     width: 50%;
     bottom: 0;
     right: 0;
@@ -248,15 +269,29 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
     }
   }
 
+  a:active {
+    color: ${({ theme }) => theme.colors.greenHighlight};
+    &:after {
+      height: 75%;
+    }
+    &:before {
+      width: 90%;
+    }
+  }
+
   div {
     justify-content: space-evenly;
     width: 100%;
+    padding: 0 16%;
   }
 
   ${(props) =>
     props.open &&
     css`
-      transform: translateX(0%);
+      li,
+      div {
+        transform: translateX(0%);
+      }
     `}
 
   @media ${devices.tabletM} {
@@ -268,7 +303,8 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
     padding: 0rem;
     gap: 0rem;
     a {
-      font-size: 1rem;
+      font-size: 1.25rem;
+      padding: 0.325rem 0.5rem;
     }
   }
   @media ${devices.tabletL} {
