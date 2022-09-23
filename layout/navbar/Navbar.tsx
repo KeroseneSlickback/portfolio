@@ -150,7 +150,7 @@ const MobileNavSpan = styled.span`
   background: ${({ theme }) => theme.colors.textPrimary};
   width: 100%;
   height: 2px;
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
 `;
 
 const MobileNavSpan1 = styled(MobileNavSpan)<{ open?: boolean }>`
@@ -192,7 +192,7 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   padding: 4rem 0rem 0rem 0rem;
   margin: 0;
   list-style-type: none;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.15s ease-in-out;
   transform: translateX(100%);
   li,
   div {

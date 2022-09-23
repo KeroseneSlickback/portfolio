@@ -6,5 +6,5 @@ export const SectionContainer = styled.section`
   box-shadow: 0 0 0 1rem ${({ theme }) => theme.colors.backgroundHighlight};
   margin: 1rem;
   width: 100%;
-  height: 100%;
+  height: fit-content;
 `;

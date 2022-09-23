@@ -14,7 +14,6 @@ interface Props {
 
 const StyledMain = styled.main`
   margin-top: 4rem;
-  padding-bottom: 2rem;
   flex-grow: 1;
   align-self: stretch;
   display: flex;
@@ -115,8 +114,9 @@ const MainBodyWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: calc(200vh - 7.5rem);
+  min-height: calc(100vh - 7.5rem);
   @media ${devices.tabletM} {
+    min-height: calc(100vh - 8.5rem);
     margin-left: 5.5rem;
   }
 `;
