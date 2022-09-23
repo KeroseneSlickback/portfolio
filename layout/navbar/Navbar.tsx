@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { devices } from "../../assets/styles/GlobalStyles";
 
@@ -16,6 +16,10 @@ const NavBarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media ${devices.tabletM} {
+    margin: 0 auto;
+    max-width: 54rem;
+  }
 `;
 
 const LogoLink = styled.a`
@@ -112,8 +116,7 @@ const MobileNavSpan = styled.span`
   background: ${({ theme }) => theme.colors.textPrimary};
   width: 20px;
   height: 2px;
-
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s linear;
 `;
 
 const MobileNavSpan1 = styled(MobileNavSpan)<{ open?: boolean }>`
@@ -121,7 +124,7 @@ const MobileNavSpan1 = styled(MobileNavSpan)<{ open?: boolean }>`
   ${(props) =>
     props.open &&
     css`
-      transform: rotate(45deg) translate(1px, 1px);
+      transform: translateY(2px) rotate(45deg);
       width: 30px;
     `}
 `;
@@ -130,7 +133,7 @@ const MobileNavSpan2 = styled(MobileNavSpan)<{ open?: boolean }>`
   ${(props) =>
     props.open &&
     css`
-      display: none;
+      transform: rotate(45deg);
     `}
 `;
 const MobileNavSpan3 = styled(MobileNavSpan)<{ open?: boolean }>`
@@ -138,7 +141,7 @@ const MobileNavSpan3 = styled(MobileNavSpan)<{ open?: boolean }>`
   ${(props) =>
     props.open &&
     css`
-      transform: rotate(-45deg) translate(1px, -1px);
+      transform: translateY(-2px) rotate(-45deg);
       width: 30px;
     `}
 `;
@@ -158,7 +161,61 @@ const MobileBackdrop = styled.div<{ open?: boolean }>`
     `}
 `;
 
+const NavBarUL = styled.ul<{ open?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+
+  inset: 0 0 0 50%;
+  background: ${({ theme }) => theme.colors.backgroundPrimary};
+  padding: min(4rem, 10rem) 1rem;
+  transform: translateX(100%);
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+  list-style-type: none;
+  li,
+  div {
+    margin: 0.625rem 0;
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.textPrimary};
+    padding: 6px 8px;
+    transition: 0.15s;
+    text-decoration: none;
+  }
+  a:hover {
+    color: ${({ theme }) => theme.colors.greenHighlight};
+  }
+
+  ${(props) =>
+    props.open &&
+    css`
+      transform: translateX(0%);
+    `}
+
+  @media ${devices.tabletM} {
+    background: none;
+    transform: none;
+    inset: initial;
+    position: relative;
+    flex-direction: row;
+    padding: 0rem;
+    gap: 0rem;
+  }
+  @media ${devices.tabletL} {
+    gap: 0.625rem;
+  }
+`;
+
 const Navbar = () => {
+  const [navBarVisible, setNavBarVisible] = useState(false);
+
+  const toggleMobileNavBar = () => {
+    setNavBarVisible((prev) => !prev);
+  };
+
   return (
     <NavBarHeader>
       <NavBarContainer>
@@ -166,14 +223,33 @@ const Navbar = () => {
           <LogoLink>M</LogoLink>
         </Link>
         <MobileNavToggleContainer>
-          <MobileNavToggle>
-            <MobileNavSpan1 />
-            <MobileNavSpan2 />
-            <MobileNavSpan3 />
+          <MobileNavToggle onClick={toggleMobileNavBar}>
+            <MobileNavSpan1 open={navBarVisible} />
+            <MobileNavSpan2 open={navBarVisible} />
+            <MobileNavSpan3 open={navBarVisible} />
           </MobileNavToggle>
         </MobileNavToggleContainer>
+        <nav>
+          <NavBarUL open={navBarVisible}>
+            <li>
+              <a href="">About</a>
+            </li>
+            <li>
+              <a href="">Projects</a>
+            </li>
+            <li>
+              <a href="">Skills</a>
+            </li>
+            <li>
+              <a href="">Contact</a>
+            </li>
+            <li>
+              <a href="">Resume</a>
+            </li>
+          </NavBarUL>
+        </nav>
       </NavBarContainer>
-      <MobileBackdrop />
+      <MobileBackdrop open={navBarVisible} />
     </NavBarHeader>
   );
 };
