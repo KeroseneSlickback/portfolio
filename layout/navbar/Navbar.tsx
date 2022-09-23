@@ -27,7 +27,7 @@ const NavBarContainer = styled.div`
   }
 `;
 
-const LogoLink = styled.a`
+export const LogoLink = styled.a`
   border: 2px solid ${({ theme }) => theme.colors.greenHighlight};
   height: 100%;
   aspect-ratio: 1/1;
@@ -44,6 +44,7 @@ const LogoLink = styled.a`
   }
   @media ${devices.tabletM} {
     font-size: 3rem;
+    height: 54px;
   }
 `;
 
@@ -142,22 +143,21 @@ const MobileNavSpan = styled.span`
   border: none;
   display: block;
   background: ${({ theme }) => theme.colors.textPrimary};
-  width: 26px;
+  width: 100%;
   height: 2px;
   transition: all 0.2s linear;
 `;
 
 const MobileNavSpan1 = styled(MobileNavSpan)<{ open?: boolean }>`
-  transform: translateY(-6px);
+  transform: translateY(-400%);
   ${(props) =>
     props.open &&
     css`
-      transform: translateY(2px) rotate(45deg);
-      width: 36px;
+      transform: translateY(100%) rotate(45deg);
+      width: 130%;
     `}
 `;
 const MobileNavSpan2 = styled(MobileNavSpan)<{ open?: boolean }>`
-  transform: translateY(0px);
   ${(props) =>
     props.open &&
     css`
@@ -165,12 +165,12 @@ const MobileNavSpan2 = styled(MobileNavSpan)<{ open?: boolean }>`
     `}
 `;
 const MobileNavSpan3 = styled(MobileNavSpan)<{ open?: boolean }>`
-  transform: translateY(6px);
+  transform: translateY(400%);
   ${(props) =>
     props.open &&
     css`
-      transform: translateY(-2px) rotate(-45deg);
-      width: 36px;
+      transform: translateY(-100%) rotate(-45deg);
+      width: 130%;
     `}
 `;
 
@@ -381,19 +381,19 @@ const Navbar = () => {
         <nav>
           <NavBarUL open={navBarVisible}>
             <li>
-              <a href="">About</a>
+              <a href="/about">About</a>
             </li>
             <li>
-              <a href="">Projects</a>
+              <a href="#projects">Projects</a>
             </li>
             <li>
-              <a href="">Skills</a>
+              <a href="/about">Skills</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
             <li>
-              <a href="">Resume</a>
+              <a href="#">Resume</a>
             </li>
             <div>
               <a
