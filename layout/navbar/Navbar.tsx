@@ -48,7 +48,7 @@ export const LogoLink = styled.a`
     border: 2px solid ${({ theme }) => theme.colors.blueHighlight};
   }
   @media ${devices.tabletM} {
-    font-size: 3rem;
+    font-size: 2.75rem;
     height: 54px;
   }
 `;
