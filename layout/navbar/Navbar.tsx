@@ -1,7 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { devices } from "../../assets/styles/GlobalStyles";
+import github from "../../assets/svgs/github.svg";
+import linkedin from "../../assets/svgs/linkedin.svg";
+import email from "../../assets/svgs/email.svg";
 
 const NavBarHeader = styled.header`
   width: 100%;
@@ -42,12 +46,13 @@ const MobileNavToggleContainer = styled.div`
   justify-content: center;
   height: 31px;
   width: 31px;
+  margin-left: auto;
   @media ${devices.tabletM} {
     display: none;
   }
 `;
 
-const MobileNavToggle = styled.button`
+const MobileNavToggle = styled.button<{ open?: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -106,6 +111,20 @@ const MobileNavToggle = styled.button`
       background-color: ${({ theme }) => theme.colors.blueHighlight};
     }
   }
+  ${(props) =>
+    props.open &&
+    css`
+      &:after {
+        width: 125%;
+        height: 125%;
+        background-color: ${({ theme }) => theme.colors.blueHighlight};
+      }
+      &:before {
+        width: 125%;
+        height: 125%;
+        background-color: ${({ theme }) => theme.colors.blueHighlight};
+      }
+    `}
 `;
 
 const MobileNavSpan = styled.span`
@@ -133,7 +152,7 @@ const MobileNavSpan2 = styled(MobileNavSpan)<{ open?: boolean }>`
   ${(props) =>
     props.open &&
     css`
-      transform: rotate(45deg);
+      opacity: 0;
     `}
 `;
 const MobileNavSpan3 = styled(MobileNavSpan)<{ open?: boolean }>`
@@ -165,9 +184,12 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   position: fixed;
-
-  inset: 0 0 0 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: ${({ theme }) => theme.colors.backgroundPrimary};
   padding: min(4rem, 10rem) 1rem;
   transform: translateX(100%);
@@ -176,17 +198,59 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   list-style-type: none;
   li,
   div {
-    margin: 0.625rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${({ theme }) => theme.colors.backgroundPrimary};
+    height: 100%;
+    width: 100%;
   }
 
   a {
+    position: relative;
+    font-size: 1.75rem;
+    background: ${({ theme }) => theme.colors.backgroundPrimary};
     color: ${({ theme }) => theme.colors.textPrimary};
-    padding: 6px 8px;
     transition: 0.15s;
+    padding: 0.5rem 1rem;
     text-decoration: none;
   }
+
+  a:after {
+    content: "";
+    position: absolute;
+    background-color: #67dea2;
+    height: 33%;
+    width: 3px;
+    bottom: 0;
+    right: 0;
+    transition: 0.25s;
+  }
+
+  a:before {
+    content: "";
+    position: absolute;
+    background-color: #67dea2;
+    height: 3px;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+    transition: 0.25s;
+  }
+
   a:hover {
     color: ${({ theme }) => theme.colors.greenHighlight};
+    &:after {
+      height: 75%;
+    }
+    &:before {
+      width: 90%;
+    }
+  }
+
+  div {
+    justify-content: space-evenly;
+    width: 100%;
   }
 
   ${(props) =>
@@ -203,6 +267,9 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
     flex-direction: row;
     padding: 0rem;
     gap: 0rem;
+    a {
+      font-size: 1rem;
+    }
   }
   @media ${devices.tabletL} {
     gap: 0.625rem;
@@ -223,7 +290,7 @@ const Navbar = () => {
           <LogoLink>M</LogoLink>
         </Link>
         <MobileNavToggleContainer>
-          <MobileNavToggle onClick={toggleMobileNavBar}>
+          <MobileNavToggle onClick={toggleMobileNavBar} open={navBarVisible}>
             <MobileNavSpan1 open={navBarVisible} />
             <MobileNavSpan2 open={navBarVisible} />
             <MobileNavSpan3 open={navBarVisible} />
@@ -246,10 +313,14 @@ const Navbar = () => {
             <li>
               <a href="">Resume</a>
             </li>
+            <div>
+              <Image src={github} alt="github" />
+              <Image src={linkedin} alt="linkedin" />
+              <Image src={email} alt="email" />
+            </div>
           </NavBarUL>
         </nav>
       </NavBarContainer>
-      <MobileBackdrop open={navBarVisible} />
     </NavBarHeader>
   );
 };
