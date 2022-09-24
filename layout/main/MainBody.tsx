@@ -16,6 +16,7 @@ const StyledMain = styled.main`
   margin-top: 4rem;
   flex-grow: 1;
   align-self: stretch;
+  width: 100%;
   display: flex;
   align-items: center;
   @media ${devices.tabletM} {
@@ -114,10 +115,12 @@ const MainBodyWrapper = styled.div`
   align-self: stretch;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   min-height: calc(100vh - 7.5rem);
   @media ${devices.tabletM} {
     min-height: calc(100vh - 8.5rem);
+    width: calc(100vw - 7.5rem);
     margin-left: 5.5rem;
   }
 `;
