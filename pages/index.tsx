@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 import ShowcaseSection from "../features/ShowcaseSection";
 import Layout from "../layout/Layout";
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import styled, { css, keyframes } from "styled-components";
 import { devices } from "../assets/styles/GlobalStyles";
 import { LargeButton, LargeLink } from "../components/buttons/Buttons";
@@ -188,9 +189,9 @@ const StyledHeading = styled.h1`
   align-items: center;
   justify-content: center;
   div {
-    padding-top: 2rem;
+    padding: 1rem 0;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 `;
 
@@ -234,8 +235,9 @@ const HiddenSpanWrapper = styled.span`
 const TitleSpan = styled.span<{ secondary?: boolean }>`
   text-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 1),
     -0.125rem -0.125rem 0.5rem rgba(0, 0, 0, 1);
-  transform: translateY(0%);
-  animation: 1.5s ${riseUp};
+  transform: translateY(-100%);
+  animation: 1.5s ${riseUp} forwards;
+  animation-delay: 600ms;
   font-size: clamp(3rem, 15vw, 5.25rem);
 
   ${(props) =>
