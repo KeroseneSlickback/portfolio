@@ -57,10 +57,11 @@ const TextContainer = styled.div`
 const GrowingSpan = styled.span`
   display: block;
   height: 44%;
-  width: 0.326rem;
+  width: 1%;
+  border-radius: 0.25rem;
   background: ${({ theme }) => theme.colors.greenHighlight};
   opacity: 0.1;
-  animation: 3s linear infinite ${grow};
+  animation: 3s cubic-bezier(0.1, 0, 0.9, 1) infinite ${grow};
 
   &:nth-child(1) {
     animation-delay: ${animationSpeed * 0.5}ms;
@@ -176,39 +177,6 @@ const GrowingSpan = styled.span`
   &:nth-child(38) {
     animation-delay: ${animationSpeed * 19}ms;
   }
-  &:nth-child(39) {
-    animation-delay: ${animationSpeed * 19.5}ms;
-  }
-  &:nth-child(40) {
-    animation-delay: ${animationSpeed * 20}ms;
-  }
-  &:nth-child(41) {
-    animation-delay: ${animationSpeed * 20.5}ms;
-  }
-  &:nth-child(42) {
-    animation-delay: ${animationSpeed * 21}ms;
-  }
-  &:nth-child(43) {
-    animation-delay: ${animationSpeed * 21.5}ms;
-  }
-  &:nth-child(44) {
-    animation-delay: ${animationSpeed * 22}ms;
-  }
-  &:nth-child(45) {
-    animation-delay: ${animationSpeed * 22.5}ms;
-  }
-  &:nth-child(46) {
-    animation-delay: ${animationSpeed * 23}ms;
-  }
-  &:nth-child(47) {
-    animation-delay: ${animationSpeed * 23.5}ms;
-  }
-  &:nth-child(48) {
-    animation-delay: ${animationSpeed * 24}ms;
-  }
-  &:nth-child(49) {
-    animation-delay: ${animationSpeed * 24.5}ms;
-  }
 `;
 
 const StyledHeading = styled.h1`
@@ -264,11 +232,11 @@ const HiddenSpanWrapper = styled.span`
 `;
 
 const TitleSpan = styled.span<{ secondary?: boolean }>`
-  text-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 1),
-    -0.25rem -0.25rem 1rem rgba(0, 0, 0, 1);
+  text-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 1),
+    -0.125rem -0.125rem 0.5rem rgba(0, 0, 0, 1);
   transform: translateY(0%);
-  animation: 0.75s ${riseUp};
-  font-size: clamp(3.25rem, 15vw, 5rem);
+  animation: 1.5s ${riseUp};
+  font-size: clamp(3rem, 15vw, 5.25rem);
 
   ${(props) =>
     props.secondary &&
@@ -304,18 +272,6 @@ const ShowcaseSection = () => {
             </div>
           </StyledHeading>
         </TextContainer>
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />

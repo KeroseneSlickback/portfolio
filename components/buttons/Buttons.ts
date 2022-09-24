@@ -24,7 +24,11 @@ export const SmallButton = styled.button`
 export const LargeButton = styled(SmallButton)`
   font-size: 1.125rem;
   @media ${devices.mobileL} {
+    font-size: 1.3125rem;
     padding: 0.5em 1.5em;
+  }
+  @media ${devices.tabletS} {
+    padding: 0.5em 2em;
   }
 `;
 

@@ -39,6 +39,7 @@ const StyledSideBarWrapper = styled.div`
     width: 5.5rem;
     height: 100%;
     padding: 1rem;
+    z-index: 11;
     div {
       display: flex;
       flex-direction: column;
