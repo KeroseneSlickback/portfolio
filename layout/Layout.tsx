@@ -10,7 +10,7 @@ type Props = {
 };
 
 const OverallPageContianer = styled.div`
-  min-height: 200vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

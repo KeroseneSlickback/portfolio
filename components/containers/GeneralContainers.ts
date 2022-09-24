@@ -1,10 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const SectionContainer = styled.section`
+export const SectionContainer = styled.section<{ styled?: boolean }>`
   display: flex;
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-  box-shadow: 0 0 0 1rem ${({ theme }) => theme.colors.backgroundHighlight};
   margin: 1rem;
   width: 100%;
-  height: fit-content;
+  min-height: 500px;
+
+  ${(props) =>
+    props.styled &&
+    css`
+      box-shadow: 0 0 0 1rem ${({ theme }) => theme.colors.backgroundHighlight};
+    `}
 `;
