@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+import { devices } from "../assets/styles/GlobalStyles";
+import { LargeButton, LargeLink } from "../components/buttons/Buttons";
 import { SectionContainer } from "../components/containers/GeneralContainers";
 import { useFindWindowSize } from "../hooks/useFindWindowSize";
 
@@ -20,11 +22,22 @@ const grow = keyframes`
   }
 `;
 
+const riseUp = keyframes`
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+`;
+
 const ShowcaseWrapper = styled.div`
   position: relative;
   display: flex;
+  overflow: hidden;
   justify-content: space-evenly;
   align-items: center;
+  gap: 0.25rem;
   height: calc(100vh - 7.5rem);
   width: 100%;
 `;
@@ -38,17 +51,13 @@ const TextContainer = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  color: #ebebf2;
-  font-size: 2.75rem;
   z-index: 2;
-  font-family: "Montserrat", sans-serif;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 1);
 `;
 
 const GrowingSpan = styled.span`
   display: block;
   height: 44%;
-  width: 0.326em;
+  width: 0.326rem;
   background: ${({ theme }) => theme.colors.greenHighlight};
   opacity: 0.1;
   animation: 3s linear infinite ${grow};
@@ -202,11 +211,99 @@ const GrowingSpan = styled.span`
   }
 `;
 
+const StyledHeading = styled.h1`
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  div {
+    padding-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+`;
+
+const HiddenSpanWrapper = styled.span`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+  @media ${devices.mobileM} {
+    &:nth-child(1) {
+      margin-left: -20%;
+    }
+    &:nth-child(2) {
+      margin-left: -10%;
+    }
+    &:nth-child(4) {
+    }
+    &:nth-child(5) {
+      margin-left: 10%;
+    }
+  }
+  @media ${devices.tabletL} {
+    &:nth-child(1) {
+      margin-left: -30%;
+    }
+    &:nth-child(2) {
+      margin-left: -15%;
+    }
+    &:nth-child(4) {
+      margin-left: 10%;
+    }
+    &:nth-child(5) {
+      margin-left: 30%;
+    }
+  }
+`;
+
+const TitleSpan = styled.span<{ secondary?: boolean }>`
+  text-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 1),
+    -0.25rem -0.25rem 1rem rgba(0, 0, 0, 1);
+  transform: translateY(0%);
+  animation: 0.75s ${riseUp};
+  font-size: clamp(3.25rem, 15vw, 5rem);
+
+  ${(props) =>
+    props.secondary &&
+    css`
+      color: ${({ theme }) => theme.colors.blueHighlight};
+    `}
+`;
+
 const ShowcaseSection = () => {
   return (
     <SectionContainer styled>
       <ShowcaseWrapper>
-        <TextContainer>Hello</TextContainer>
+        <TextContainer>
+          <StyledHeading>
+            <HiddenSpanWrapper>
+              <TitleSpan>Mitchell</TitleSpan>
+            </HiddenSpanWrapper>
+            <HiddenSpanWrapper>
+              <TitleSpan>William</TitleSpan>
+            </HiddenSpanWrapper>
+            <HiddenSpanWrapper>
+              <TitleSpan>Spaur</TitleSpan>
+            </HiddenSpanWrapper>
+            <HiddenSpanWrapper>
+              <TitleSpan secondary>Fullstack</TitleSpan>
+            </HiddenSpanWrapper>
+            <HiddenSpanWrapper>
+              <TitleSpan secondary>Developer</TitleSpan>
+            </HiddenSpanWrapper>
+            <div>
+              <LargeLink>About Me</LargeLink>
+              <LargeLink>Contact</LargeLink>
+            </div>
+          </StyledHeading>
+        </TextContainer>
         <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />

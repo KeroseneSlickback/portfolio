@@ -8,6 +8,7 @@ import linkedin from "../../assets/svgs/linkedin.svg";
 import email from "../../assets/svgs/email.svg";
 
 const NavBarHeader = styled.header`
+  z-index: 9999;
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
   position: fixed;
   width: 100%;
