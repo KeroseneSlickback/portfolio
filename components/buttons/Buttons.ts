@@ -3,11 +3,13 @@ import styled, { css } from "styled-components";
 import { devices } from "../../assets/styles/GlobalStyles";
 
 export const SmallButtonWrapper = styled.div`
+  width: 100%;
   background-color: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  margin: 0.5rem 0;
 `;
 
 export const SmallButton = styled.button<{ shadow?: boolean; green?: boolean }>`

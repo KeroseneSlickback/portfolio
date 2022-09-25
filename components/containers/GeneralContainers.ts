@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styled, { css } from "styled-components";
 import { devices } from "../../assets/styles/GlobalStyles";
 
@@ -12,7 +11,7 @@ export const SectionContainer = styled.section<{
   align-items: center;
   margin: 1rem;
   padding: 2rem 0;
-  gap: 3rem;
+  gap: 2rem;
 
   ${(props) =>
     props.styled &&

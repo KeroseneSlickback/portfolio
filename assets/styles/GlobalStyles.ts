@@ -30,7 +30,7 @@ export const theme = {
     textPrimary: "#EBEBF2",
     greenHighlight: "#67DEA2",
     blueHighlight: "#68A7FF",
-    blueOverlay: "#3B3A8D",
+    blueOverlay: "#29215E",
   },
 };
 

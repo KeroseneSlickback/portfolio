@@ -27,7 +27,9 @@ const ProjectsSection = () => {
         </HeadingWrapper>
         <ProjectWrapper>
           <ProjectImageWrapper>
-            <Image src={dummyImage} alt="project" />
+            <div>
+              <Image src={dummyImage} alt="project" />
+            </div>
           </ProjectImageWrapper>
           <ProjectExplainWrapper>
             <h3>MusicPlug</h3>

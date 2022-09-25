@@ -70,7 +70,7 @@ const AboutMeSection = () => {
           <HeadingSpan top left />
         </HeadingWrapper>
         <BlockWrapper>
-          <SkillBlock src={HTML5} alt="HTML" height={54} width={54} />
+          <SkillBlock src={HTML5} alt="HTML5" height={54} width={54} />
           <SkillBlock src={CSS} alt="CSS" height={54} width={54} />
           <SkillBlock
             src={Javascript}

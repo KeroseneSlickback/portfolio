@@ -233,8 +233,10 @@ const HiddenSpanWrapper = styled.span`
 `;
 
 const TitleSpan = styled.span<{ secondary?: boolean }>`
-  text-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 1),
-    -0.125rem -0.125rem 0.5rem rgba(0, 0, 0, 1);
+  text-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 1),
+    -0.25rem -0.25rem 0.5rem rgba(0, 0, 0, 1),
+    -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 1),
+    0.25rem -0.25rem 0.5rem rgba(0, 0, 0, 1);
   transform: translateY(-100%);
   animation: 1s ${riseUp} ease-in-out forwards;
   animation-delay: 600ms;

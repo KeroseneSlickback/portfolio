@@ -10,28 +10,23 @@ export const ProjectWrapper = styled.div`
 `;
 
 export const ProjectImageWrapper = styled.div`
-  width: 100%;
-  aspect-ratio: 2/1;
+  position: relative;
+  width: fit-content;
+  height: min-content;
+  background: ${({ theme }) => theme.colors.blueHighlight};
+  transition: 0.25s;
+  font-size: 0; // Added to fix NextJS's Image
 
-  span > span {
-    position: relative;
-    z-index: 2;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: all 0.2s ease-in;
-      background: hsl(0 0% 1% / 0.4);
-      opacity: 1;
-      z-index: 3;
-    }
-    &:hover {
-      &:after {
-        opacity: 0;
-      }
+  div {
+    transition: 0.25s;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(0.8);
+  }
+
+  &:hover {
+    background: white;
+    div {
+      filter: none;
     }
   }
 `;
@@ -39,16 +34,17 @@ export const ProjectImageWrapper = styled.div`
 export const ProjectExplainWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  gap: 1rem;
+  z-index: 2;
   h3 {
     font-size: 1.6125rem;
     line-height: 1;
+    padding: 1rem;
   }
   p {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     font-size: 0.8125rem;
-    background-color: ${({ theme }) => theme.colors.blueOverlay};
+    background-color: rgba(29, 19, 67, 0.5);
   }
 `;

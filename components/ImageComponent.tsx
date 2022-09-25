@@ -9,7 +9,7 @@ const ImageWrap = styled.span`
   align-items: center;
   width: fit-content;
   height: fit-content;
-  margin: 0 0.5rem;
+  margin: 0 0.75rem;
   box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
   background: ${({ theme }) => theme.colors.backgroundPrimary};
 
