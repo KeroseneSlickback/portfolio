@@ -7,10 +7,11 @@ export const HeadingWrapper = styled.div`
   grid-template-columns: 10vw max-content 20vw;
   justify-items: center;
   align-items: center;
-  padding: 1rem;
+  margin: 1.5rem 0;
   gap: 1rem;
   h2 {
-    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    margin: 0 0.5rem;
+    font-size: clamp(1.75rem, 5vw, 2rem);
   }
   @media ${devices.mobileL} {
     grid-template-columns: 10vw max-content 35vw;
@@ -24,10 +25,9 @@ export const HeadingSpan = styled.span<{
   right?: boolean;
   blue?: boolean;
 }>`
-  padding: 0 1rem;
   position: relative;
   height: 2px;
-  width: 100%;
+  width: 80%;
   background-color: ${({ theme }) => theme.colors.greenHighlight};
 
   ${(props) =>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../assets/styles/GlobalStyles";
 
 export const AboutMeTextWrapper = styled.div`
   display: flex;
@@ -6,7 +7,9 @@ export const AboutMeTextWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
-  margin: 0 1rem;
+  @media ${devices.mobileL} {
+    margin: 0 1rem;
+  }
 `;
 
 export const AboutMeP = styled.p`

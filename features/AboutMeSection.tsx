@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  BlockWrapper,
   MajorityWrapper,
   SectionContainer,
   TopBottomWrapper,
@@ -7,6 +8,18 @@ import {
 import { HeadingSpan, HeadingWrapper } from "../components/HeadingComponents";
 import { AboutMeP, AboutMeTextWrapper } from "../components/TextComponents";
 import straightshot from "../assets/images/straightshot.jpg";
+import SkillBlock from "../components/SkillBlockComponent";
+import HTML5 from "../assets/svgs/HTML5.svg";
+import CSS from "../assets/svgs/CSS.svg";
+import Javascript from "../assets/svgs/Javascript.svg";
+import Typescript from "../assets/svgs/Typescript.svg";
+import ReactSVG from "../assets/svgs/React.svg";
+import Node from "../assets/svgs/Node.svg";
+import MongoDB from "../assets/svgs/MongoDB.svg";
+import Jest from "../assets/svgs/Jest.svg";
+import NextJS from "../assets/svgs/NextJS.svg";
+import Express from "../assets/svgs/Express.svg";
+import GithubIcon from "../assets/svgs/GithubIcon.svg";
 import ImageComponent from "../components/ImageComponent";
 
 const AboutMeSection = () => {
@@ -49,6 +62,36 @@ const AboutMeSection = () => {
             width={300}
           />
         </MajorityWrapper>
+      </TopBottomWrapper>
+      <TopBottomWrapper>
+        <HeadingWrapper>
+          <HeadingSpan bottom right blue />
+          <h2>Skills</h2>
+          <HeadingSpan top left />
+        </HeadingWrapper>
+        <BlockWrapper>
+          <SkillBlock src={HTML5} alt="HTML" height={54} width={54} />
+          <SkillBlock src={CSS} alt="CSS" height={54} width={54} />
+          <SkillBlock
+            src={Javascript}
+            alt="Javascript"
+            height={54}
+            width={54}
+          />
+          <SkillBlock
+            src={Typescript}
+            alt="Typescript"
+            height={54}
+            width={54}
+          />
+          <SkillBlock src={ReactSVG} alt="React" height={54} width={54} />
+          <SkillBlock src={Node} alt="Node" height={54} width={54} />
+          <SkillBlock src={Express} alt="Express" height={54} width={54} />
+          <SkillBlock src={MongoDB} alt="MongoDB" height={54} width={54} />
+          <SkillBlock src={Jest} alt="Jest" height={54} width={54} />
+          <SkillBlock src={NextJS} alt="NextJS" height={54} width={54} />
+          <SkillBlock src={GithubIcon} alt="Github" height={54} width={54} />
+        </BlockWrapper>
       </TopBottomWrapper>
     </SectionContainer>
   );

@@ -4,8 +4,11 @@ import { devices } from "../../assets/styles/GlobalStyles";
 
 export const SectionContainer = styled.section<{ styled?: boolean }>`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 1rem;
-  min-height: calc(100vh - 5.5rem);
+  gap: 1rem;
 
   ${(props) =>
     props.styled &&
@@ -24,8 +27,8 @@ export const TopBottomWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  @media ${devices.tabletM} {
-    margin-right: 2rem;
+  @media ${devices.laptop} {
+    max-width: 80%;
   }
 `;
 
@@ -33,10 +36,22 @@ export const MajorityWrapper = styled.div`
   display: grid;
   grid-template-rows: max-content max-content;
   gap: 2rem;
+  padding: 0 1rem;
   justify-items: center;
   @media ${devices.tabletM} {
     align-items: center;
     grid-template-columns: 1.5fr 1fr;
     gap: 1rem;
   }
+`;
+
+export const BlockWrapper = styled.div`
+  width: 90%;
+  display: grid;
+  justify-items: stretch;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
+  gap: 2rem;
 `;

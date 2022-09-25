@@ -39,7 +39,7 @@ const StyledSideBarWrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.backgroundPrimary};
     width: 5.5rem;
     height: 100%;
-    padding: 1rem;
+    padding: 1.1rem 1rem;
     z-index: 11;
     div {
       display: flex;
