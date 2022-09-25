@@ -5,7 +5,7 @@ import { devices } from "../../assets/styles/GlobalStyles";
 export const SectionContainer = styled.section<{ styled?: boolean }>`
   display: flex;
   margin: 1rem;
-  min-height: 250px;
+  min-height: calc(100vh - 5.5rem);
 
   ${(props) =>
     props.styled &&
@@ -24,11 +24,19 @@ export const TopBottomWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  @media ${devices.tabletM} {
+    margin-right: 2rem;
+  }
 `;
 
 export const MajorityWrapper = styled.div`
   display: grid;
   grid-template-rows: max-content max-content;
-  gap: 1rem;
+  gap: 2rem;
   justify-items: center;
+  @media ${devices.tabletM} {
+    align-items: center;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
+  }
 `;

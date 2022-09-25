@@ -8,8 +8,9 @@ const ImageWrap = styled.span`
   justify-content: center;
   align-items: center;
   width: fit-content;
-  height: 100%;
-  box-shadow: 0 0 0 6px ${({ theme }) => theme.colors.backgroundPrimary};
+  height: fit-content;
+  margin: 0 0.5rem;
+  box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
 
   & > span {
   }
@@ -18,8 +19,8 @@ const ImageWrap = styled.span`
     transition: 0.2s;
     position: absolute;
     content: "";
-    bottom: -3%;
-    right: -3%;
+    bottom: -4%;
+    right: -4%;
     background: ${({ theme }) => theme.colors.greenHighlight};
     width: 80%;
     height: 80%;
@@ -30,22 +31,22 @@ const ImageWrap = styled.span`
     transition: 0.2s;
     position: absolute;
     content: "";
-    top: -3%;
-    left: -3%;
+    top: -4%;
+    left: -4%;
     background: ${({ theme }) => theme.colors.greenHighlight};
     width: 80%;
     height: 80%;
     z-index: -1;
   }
   &:hover {
-    box-shadow: 0 0 0 6px ${({ theme }) => theme.colors.backgroundSecondary};
+    box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundSecondary};
     &:after {
-      width: 106%;
-      height: 106%;
+      width: 108%;
+      height: 108%;
     }
     &:before {
-      width: 106%;
-      height: 106%;
+      width: 108%;
+      height: 108%;
     }
   }
 `;
