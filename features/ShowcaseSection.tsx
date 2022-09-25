@@ -249,7 +249,7 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
 
 const ShowcaseSection = () => {
   return (
-    <SectionContainer styled>
+    <SectionContainer styled noPadding>
       <ShowcaseWrapper>
         <TextContainer>
           <StyledHeading>

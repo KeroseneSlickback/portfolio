@@ -7,7 +7,7 @@ export const HeadingWrapper = styled.div`
   grid-template-columns: 10vw max-content 20vw;
   justify-items: center;
   align-items: center;
-  margin: 1.5rem 0;
+  margin-bottom: 2rem;
   gap: 1rem;
   h2 {
     margin: 0 0.5rem;
