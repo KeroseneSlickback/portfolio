@@ -1,12 +1,18 @@
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { devices } from "../../assets/styles/GlobalStyles";
 
-export const SmallButton = styled.button`
+export const SmallButtonWrapper = styled.div`
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+`;
+
+export const SmallButton = styled.button<{ shadow?: boolean; green?: boolean }>`
   cursor: pointer;
   color: ${({ theme }) => theme.colors.textPrimary};
-  text-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 1),
-    -0.25rem -0.25rem 0.25rem rgba(0, 0, 0, 1);
   background-color: transparent;
   border: 2px solid ${({ theme }) => theme.colors.blueHighlight};
   padding: 0.5rem 1rem;
@@ -19,6 +25,31 @@ export const SmallButton = styled.button`
     border: 2px solid ${({ theme }) => theme.colors.textPrimary};
     border: 2px solid ${({ theme }) => theme.colors.blueHighlight};
   }
+
+  ${(props) =>
+    props.shadow &&
+    css`
+      text-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 1),
+        -0.25rem -0.25rem 0.25rem rgba(0, 0, 0, 1);
+    `}
+  ${(props) =>
+    props.green &&
+    css`
+      color: ${({ theme }) => theme.colors.textPrimary};
+      border: 2px solid ${({ theme }) => theme.colors.greenHighlight};
+      &:hover {
+        border: 2px solid ${({ theme }) => theme.colors.textPrimary};
+      }
+      &:active {
+        border: 2px solid ${({ theme }) => theme.colors.textPrimary};
+        border: 2px solid ${({ theme }) => theme.colors.greenHighlight};
+      }
+    `}
+`;
+
+export const MediumButton = styled(SmallButton)`
+  font-size: 1rem;
+  padding: 0.5em 1.25em;
 `;
 
 export const LargeButton = styled(SmallButton)`

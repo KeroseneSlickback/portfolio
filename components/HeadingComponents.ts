@@ -4,17 +4,18 @@ import { devices } from "../assets/styles/GlobalStyles";
 export const HeadingWrapper = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 10vw max-content 20vw;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
   margin-bottom: 2rem;
   gap: 1rem;
   h2 {
-    margin: 0 0.5rem;
     font-size: clamp(1.75rem, 5vw, 2rem);
+    width: max-content;
   }
   @media ${devices.mobileL} {
     grid-template-columns: 10vw max-content 35vw;
+    padding: 0 1rem;
   }
 `;
 

@@ -33,9 +33,11 @@ const spin = keyframes`
 `;
 
 export const SpinnerWrapper = styled.div`
-  z-index: 888;
   height: 100vh;
   width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,8 +45,7 @@ export const SpinnerWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
   top: 0;
   left: 0;
-  opacity: 0;
-  z-index: 10;
+  z-index: 9999;
   animation: ${fadeOut} 0.6s linear;
 `;
 

@@ -12,7 +12,7 @@ export const SectionContainer = styled.section<{
   align-items: center;
   margin: 1rem;
   padding: 2rem 0;
-  gap: 2rem;
+  gap: 3rem;
 
   ${(props) =>
     props.styled &&

@@ -236,7 +236,7 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
   text-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 1),
     -0.125rem -0.125rem 0.5rem rgba(0, 0, 0, 1);
   transform: translateY(-100%);
-  animation: 1.5s ${riseUp} forwards;
+  animation: 1s ${riseUp} ease-in-out forwards;
   animation-delay: 600ms;
   font-size: clamp(3rem, 15vw, 5.25rem);
 
@@ -269,8 +269,10 @@ const ShowcaseSection = () => {
               <TitleSpan secondary>Developer</TitleSpan>
             </HiddenSpanWrapper>
             <div>
-              <LargeLink>About Me</LargeLink>
-              <LargeLink>Contact</LargeLink>
+              <LargeLink shadow green>
+                About Me
+              </LargeLink>
+              <LargeLink shadow>Contact</LargeLink>
             </div>
           </StyledHeading>
         </TextContainer>
