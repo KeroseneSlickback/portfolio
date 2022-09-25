@@ -38,7 +38,7 @@ export const HeadingSpan = styled.span<{
         position: absolute;
         height: 2px;
         width: 65%;
-        bottom: 10px;
+        bottom: 12px;
         background-color: ${({ theme }) => theme.colors.greenHighlight};
       }
     `}
@@ -51,7 +51,7 @@ export const HeadingSpan = styled.span<{
         height: 2px;
         width: 65%;
         background-color: ${({ theme }) => theme.colors.greenHighlight};
-        top: 10px;
+        top: 12px;
       }
     `}
   ${(props) =>

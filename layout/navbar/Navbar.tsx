@@ -88,7 +88,7 @@ const MobileNavToggle = styled.button<{ open?: boolean }>`
     content: "";
     bottom: -4px;
     right: -4px;
-    background: #67dea2;
+    background: ${({ theme }) => theme.colors.greenHighlight};
     width: 80%;
     height: 80%;
     z-index: -1;
@@ -100,7 +100,7 @@ const MobileNavToggle = styled.button<{ open?: boolean }>`
     content: "";
     top: -4px;
     left: -4px;
-    background: #67dea2;
+    background: ${({ theme }) => theme.colors.greenHighlight};
     width: 80%;
     height: 80%;
     z-index: -1;

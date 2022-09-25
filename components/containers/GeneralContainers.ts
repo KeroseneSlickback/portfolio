@@ -1,10 +1,11 @@
+import Image from "next/image";
 import styled, { css } from "styled-components";
 import { devices } from "../../assets/styles/GlobalStyles";
 
 export const SectionContainer = styled.section<{ styled?: boolean }>`
   display: flex;
   margin: 1rem;
-  min-height: 500px;
+  min-height: 250px;
 
   ${(props) =>
     props.styled &&
@@ -23,4 +24,11 @@ export const TopBottomWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+`;
+
+export const MajorityWrapper = styled.div`
+  display: grid;
+  grid-template-rows: max-content max-content;
+  gap: 1rem;
+  justify-items: center;
 `;
