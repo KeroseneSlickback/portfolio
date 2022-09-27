@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import {
   SectionContainer,
   TopBottomWrapper,
@@ -17,6 +17,7 @@ import {
 } from "../components/buttons/Buttons";
 
 const ProjectsSection = () => {
+  const [aspect, setAspect] = useState(16 / 9);
   return (
     <SectionContainer styled>
       <TopBottomWrapper>
@@ -28,7 +29,12 @@ const ProjectsSection = () => {
         <ProjectWrapper>
           <ProjectImageWrapper>
             <div>
-              <Image src={dummyImage} alt="project" />
+              <Image
+                src={dummyImage}
+                alt="project"
+                width={500}
+                height={500 / aspect}
+              />
             </div>
           </ProjectImageWrapper>
           <ProjectExplainWrapper>

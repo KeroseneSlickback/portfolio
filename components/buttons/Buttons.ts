@@ -9,7 +9,7 @@ export const SmallButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin: 0.5rem 0;
+  /* margin: 0.5rem 0; */
 `;
 
 export const SmallButton = styled.button<{ shadow?: boolean; green?: boolean }>`
