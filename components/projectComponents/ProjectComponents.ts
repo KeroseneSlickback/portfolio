@@ -101,8 +101,18 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
     color: ${({ theme }) => theme.colors.blueHighlight};
   }
   p {
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 0rem 0.5rem;
     font-size: clamp(0.8125rem, 2vw, 1rem);
+  }
+  span {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0rem 0.5rem;
+
+    p {
+      padding: 0rem;
+      font-size: clamp(0.6125rem, 2vw, 0.8125rem);
+    }
   }
 
   @media ${devices.mobileL} {

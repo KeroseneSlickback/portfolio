@@ -42,6 +42,9 @@ const ProjectsSection = () => {
                 accusamus voluptatem dolorem, cumque deserunt totam assumenda
                 laborum!
               </p>
+              <span>
+                <p>React - MongoDB - Node - Express - Mongoose</p>
+              </span>
               <SmallButtonWrapper>
                 <MediumButton green>GitHub</MediumButton>
                 <MediumButton>Live Site</MediumButton>
@@ -63,6 +66,9 @@ const ProjectsSection = () => {
                 accusamus voluptatem dolorem, cumque deserunt totam assumenda
                 laborum!
               </p>
+              <span>
+                <p>React - MongoDB - Node - Express - Mongoose</p>
+              </span>
               <SmallButtonWrapper>
                 <MediumButton green>GitHub</MediumButton>
                 <MediumButton>Live Site</MediumButton>
@@ -84,6 +90,9 @@ const ProjectsSection = () => {
                 accusamus voluptatem dolorem, cumque deserunt totam assumenda
                 laborum!
               </p>
+              <span>
+                <p>React - MongoDB - Node - Express - Mongoose</p>
+              </span>
               <SmallButtonWrapper>
                 <MediumButton green>GitHub</MediumButton>
                 <MediumButton>Live Site</MediumButton>
@@ -105,6 +114,9 @@ const ProjectsSection = () => {
                 accusamus voluptatem dolorem, cumque deserunt totam assumenda
                 laborum!
               </p>
+              <span>
+                <p>React - MongoDB - Node - Express - Mongoose</p>
+              </span>
               <SmallButtonWrapper>
                 <MediumButton green>GitHub</MediumButton>
                 <MediumButton>Live Site</MediumButton>
