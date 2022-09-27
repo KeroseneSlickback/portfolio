@@ -17,7 +17,6 @@ import {
 } from "../components/buttons/Buttons";
 
 const ProjectsSection = () => {
-  const [aspect, setAspect] = useState(16 / 9);
   return (
     <SectionContainer styled>
       <TopBottomWrapper>
@@ -29,15 +28,70 @@ const ProjectsSection = () => {
         <ProjectWrapper>
           <ProjectImageWrapper>
             <div>
-              <Image
-                src={dummyImage}
-                alt="project"
-                width={500}
-                height={500 / aspect}
-              />
+              <Image src={dummyImage} alt="project" />
             </div>
           </ProjectImageWrapper>
           <ProjectExplainWrapper>
+            <h3>MusicPlug</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam temporibus repellat perspiciatis ullam tempore quisquam
+              recusandae ab omnis quam error necessitatibus quas, accusamus
+              voluptatem dolorem, cumque deserunt totam assumenda laborum!
+            </p>
+            <SmallButtonWrapper>
+              <MediumButton green>GitHub</MediumButton>
+              <MediumButton>Live Site</MediumButton>
+            </SmallButtonWrapper>
+          </ProjectExplainWrapper>
+        </ProjectWrapper>
+        <ProjectWrapper>
+          <ProjectImageWrapper alt>
+            <div>
+              <Image src={dummyImage} alt="project" />
+            </div>
+          </ProjectImageWrapper>
+          <ProjectExplainWrapper alt>
+            <h3>MusicPlug</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam temporibus repellat perspiciatis ullam tempore quisquam
+              recusandae ab omnis quam error necessitatibus quas, accusamus
+              voluptatem dolorem, cumque deserunt totam assumenda laborum!
+            </p>
+            <SmallButtonWrapper>
+              <MediumButton green>GitHub</MediumButton>
+              <MediumButton>Live Site</MediumButton>
+            </SmallButtonWrapper>
+          </ProjectExplainWrapper>
+        </ProjectWrapper>
+        <ProjectWrapper>
+          <ProjectImageWrapper>
+            <div>
+              <Image src={dummyImage} alt="project" />
+            </div>
+          </ProjectImageWrapper>
+          <ProjectExplainWrapper>
+            <h3>MusicPlug</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam temporibus repellat perspiciatis ullam tempore quisquam
+              recusandae ab omnis quam error necessitatibus quas, accusamus
+              voluptatem dolorem, cumque deserunt totam assumenda laborum!
+            </p>
+            <SmallButtonWrapper>
+              <MediumButton green>GitHub</MediumButton>
+              <MediumButton>Live Site</MediumButton>
+            </SmallButtonWrapper>
+          </ProjectExplainWrapper>
+        </ProjectWrapper>
+        <ProjectWrapper>
+          <ProjectImageWrapper alt>
+            <div>
+              <Image src={dummyImage} alt="project" />
+            </div>
+          </ProjectImageWrapper>
+          <ProjectExplainWrapper alt>
             <h3>MusicPlug</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
