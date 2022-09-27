@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3rem;
+  height: 5.5rem;
   margin-top: auto;
   @media ${devices.tabletM} {
     margin-left: 5.5rem;
@@ -16,8 +16,16 @@ const StyledFooter = styled.footer`
   }
 `;
 
+const FooterP = styled.p`
+  font-size: 1rem;
+`;
+
 const Footer = () => {
-  return <StyledFooter>StyledFooter</StyledFooter>;
+  return (
+    <StyledFooter>
+      <FooterP>Built with ❤️ using NextJS/React.</FooterP>
+    </StyledFooter>
+  );
 };
 
 export default Footer;

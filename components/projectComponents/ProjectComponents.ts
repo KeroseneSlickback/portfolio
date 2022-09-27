@@ -10,7 +10,7 @@ export const ProjectExpansionWrapper = styled.div`
   }
 `;
 
-export const ProjectWrapper = styled.div<{ alt?: boolean }>`
+export const ProjectWrapper = styled.div<{ alternative?: boolean }>`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -20,13 +20,13 @@ export const ProjectWrapper = styled.div<{ alt?: boolean }>`
     max-width: 1000px;
   }
   ${(props) =>
-    props.alt &&
+    props.alternative &&
     css`
       align-self: flex-end;
     `}
 `;
 
-export const ProjectImageWrapper = styled.div<{ alt?: boolean }>`
+export const ProjectImageWrapper = styled.div<{ alternative?: boolean }>`
   align-self: center;
   position: relative;
   background: ${({ theme }) => theme.colors.blueHighlight};
@@ -52,7 +52,7 @@ export const ProjectImageWrapper = styled.div<{ alt?: boolean }>`
     align-self: flex-start;
   }
   ${(props) =>
-    props.alt &&
+    props.alternative &&
     css`
       background: ${({ theme }) => theme.colors.greenHighlight};
       filter: saturate(65%) brightness(110%);
@@ -62,7 +62,7 @@ export const ProjectImageWrapper = styled.div<{ alt?: boolean }>`
     `}
 `;
 
-export const ProjectExplainWrapper = styled.div<{ alt?: boolean }>`
+export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
   align-self: center;
   background-color: rgba(29, 19, 67, 0.75);
   position: relative;
@@ -113,7 +113,7 @@ export const ProjectExplainWrapper = styled.div<{ alt?: boolean }>`
     margin-top: -26%;
   }
   ${(props) =>
-    props.alt &&
+    props.alternative &&
     css`
       align-items: flex-start;
       h3 {

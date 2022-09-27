@@ -48,13 +48,13 @@ const ProjectsSection = () => {
               </SmallButtonWrapper>
             </ProjectExplainWrapper>
           </ProjectWrapper>
-          <ProjectWrapper alt>
-            <ProjectImageWrapper alt>
+          <ProjectWrapper alternative>
+            <ProjectImageWrapper alternative>
               <div>
                 <Image src={dummyImage} alt="project" />
               </div>
             </ProjectImageWrapper>
-            <ProjectExplainWrapper alt>
+            <ProjectExplainWrapper alternative>
               <h3>MusicPlug</h3>
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -90,13 +90,13 @@ const ProjectsSection = () => {
               </SmallButtonWrapper>
             </ProjectExplainWrapper>
           </ProjectWrapper>
-          <ProjectWrapper alt>
-            <ProjectImageWrapper alt>
+          <ProjectWrapper alternative>
+            <ProjectImageWrapper alternative>
               <div>
                 <Image src={dummyImage} alt="project" />
               </div>
             </ProjectImageWrapper>
-            <ProjectExplainWrapper alt>
+            <ProjectExplainWrapper alternative>
               <h3>MusicPlug</h3>
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
