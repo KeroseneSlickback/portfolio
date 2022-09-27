@@ -1,14 +1,29 @@
 import styled, { css } from "styled-components";
 import { devices } from "../assets/styles/GlobalStyles";
 
-export const ProjectWrapper = styled.div`
+export const ProjectExpansionWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  @media ${devices.laptopL} {
+    max-width: 1390px;
+  }
+`;
+
+export const ProjectWrapper = styled.div<{ alt?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
   padding: 0.5rem;
   width: 100%;
   @media ${devices.tabletL} {
     max-width: 1000px;
   }
+  ${(props) =>
+    props.alt &&
+    css`
+      align-self: flex-end;
+    `}
 `;
 
 export const ProjectImageWrapper = styled.div<{ alt?: boolean }>`

@@ -29,7 +29,7 @@ export const SectionContainer = styled.section<{
   }
 `;
 
-export const TopBottomWrapper = styled.div`
+export const TopBottomWrapper = styled.div<{ wider?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,6 +38,14 @@ export const TopBottomWrapper = styled.div`
   @media ${devices.laptop} {
     max-width: 80%;
   }
+
+  ${(props) =>
+    props.wider &&
+    css`
+      @media ${devices.laptop} {
+        max-width: 90%;
+      }
+    `}
 `;
 
 export const MajorityWrapper = styled.div`
