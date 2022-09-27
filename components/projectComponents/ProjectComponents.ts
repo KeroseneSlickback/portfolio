@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { devices } from "../assets/styles/GlobalStyles";
+import { devices } from "../../assets/styles/GlobalStyles";
 
 export const ProjectExpansionWrapper = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ export const ProjectWrapper = styled.div<{ alt?: boolean }>`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   width: 100%;
   @media ${devices.tabletL} {
     max-width: 1000px;

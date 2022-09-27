@@ -10,7 +10,7 @@ import {
   ProjectExplainWrapper,
   ProjectImageWrapper,
   ProjectWrapper,
-} from "../components/ProjectComponents";
+} from "../components/projectComponents/ProjectComponents";
 import dummyImage from "../assets/images/dummyimage.jpeg";
 import {
   MediumButton,
