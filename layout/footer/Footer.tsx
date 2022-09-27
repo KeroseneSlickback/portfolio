@@ -7,6 +7,7 @@ const StyledFooter = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 5.5rem;
   margin-top: auto;
@@ -17,13 +18,14 @@ const StyledFooter = styled.footer`
 `;
 
 const FooterP = styled.p`
-  font-size: 1rem;
+  font-size: 0.825rem;
 `;
 
 const Footer = () => {
   return (
     <StyledFooter>
       <FooterP>Built with ❤️ using NextJS/React.</FooterP>
+      <FooterP>All content © 2014-Present.</FooterP>
     </StyledFooter>
   );
 };

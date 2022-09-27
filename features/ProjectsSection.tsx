@@ -19,7 +19,7 @@ import {
 
 const ProjectsSection = () => {
   return (
-    <SectionContainer styled>
+    <SectionContainer styled id="projects">
       <TopBottomWrapper wider>
         <HeadingWrapper>
           <HeadingSpan top right blue />

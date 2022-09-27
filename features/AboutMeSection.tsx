@@ -24,7 +24,7 @@ import ImageComponent from "../components/ImageComponent";
 
 const AboutMeSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="about">
       <TopBottomWrapper>
         <HeadingWrapper>
           <HeadingSpan top right />
@@ -63,7 +63,7 @@ const AboutMeSection = () => {
           />
         </MajorityWrapper>
       </TopBottomWrapper>
-      <TopBottomWrapper>
+      <TopBottomWrapper id="skills">
         <HeadingWrapper>
           <HeadingSpan bottom right blue />
           <h2>Skills</h2>

@@ -6,6 +6,9 @@ import { devices } from "../../assets/styles/GlobalStyles";
 import github from "../../assets/svgs/github.svg";
 import linkedin from "../../assets/svgs/linkedin.svg";
 import email from "../../assets/svgs/email.svg";
+import { StyledGitHub } from "../../components/styledSvgs/StyledGitHub";
+import { StyledLinkedIn } from "../../components/styledSvgs/StyledLinkedIn";
+import { StyledEmail } from "../../components/styledSvgs/StyledEmail";
 
 const NavBarHeader = styled.header`
   z-index: 10;
@@ -308,8 +311,21 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
       transition: 0.2s;
       border: 2px solid ${({ theme }) => theme.colors.blueOverlay};
       padding: 0.5rem;
+      height: 40px;
+      width: 40px;
+      div {
+        svg {
+          transition: 0.2s;
+          stroke: ${({ theme }) => theme.colors.greenHighlight};
+        }
+      }
       &:hover {
         border: 2px solid ${({ theme }) => theme.colors.blueHighlight};
+        div {
+          svg {
+            stroke: ${({ theme }) => theme.colors.textPrimary};
+          }
+        }
       }
       &:active {
         border: 2px solid ${({ theme }) => theme.colors.textPrimary};
@@ -387,13 +403,13 @@ const Navbar = () => {
         <nav>
           <NavBarUL open={navBarVisible}>
             <li>
-              <a href="/about">About</a>
+              <a href="#about">About</a>
             </li>
             <li>
               <a href="#projects">Projects</a>
             </li>
             <li>
-              <a href="/about">Skills</a>
+              <a href="#skills">Skills</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -407,21 +423,21 @@ const Navbar = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                <Image src={github} alt="github" />
+                <StyledGitHub />
               </a>
               <a
                 href="https://www.linkedin.com/in/mitchell-spaur-597b23143"
                 rel="noreferrer"
                 target="_blank"
               >
-                <Image src={linkedin} alt="linkedin" />
+                <StyledLinkedIn />
               </a>
               <a
                 href="mailto:mitchellspaur@gmail.com"
                 rel="noreferrer"
                 target="_blank"
               >
-                <Image src={email} alt="email" />
+                <StyledEmail />
               </a>
             </div>
           </NavBarUL>

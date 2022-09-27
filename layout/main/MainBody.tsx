@@ -7,6 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { LogoLink } from "../navbar/Navbar";
 import { devices } from "../../assets/styles/GlobalStyles";
+import { StyledGitHub } from "../../components/styledSvgs/StyledGitHub";
+import { StyledLinkedIn } from "../../components/styledSvgs/StyledLinkedIn";
+import { StyledEmail } from "../../components/styledSvgs/StyledEmail";
 
 interface Props {
   children: JSX.Element;
@@ -45,8 +48,31 @@ const StyledSideBarWrapper = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin: 1rem 0;
       gap: 1.5rem;
+      a {
+        height: 26px;
+        width: 26px;
+        div {
+          svg {
+            transition: 0.2s;
+            stroke: ${({ theme }) => theme.colors.greenHighlight};
+          }
+        }
+        &:hover {
+          div {
+            svg {
+              stroke: ${({ theme }) => theme.colors.textPrimary};
+            }
+          }
+        }
+        &:active {
+          div {
+            svg {
+              stroke: ${({ theme }) => theme.colors.greenHighlight};
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -90,21 +116,21 @@ const Sidebar = () => {
           rel="noreferrer"
           target="_blank"
         >
-          <Image src={github} alt="github" />
+          <StyledGitHub />
         </a>
         <a
           href="https://www.linkedin.com/in/mitchell-spaur-597b23143"
           rel="noreferrer"
           target="_blank"
         >
-          <Image src={linkedin} alt="linkedin" />
+          <StyledLinkedIn />
         </a>
         <a
           href="mailto:mitchellspaur@gmail.com"
           rel="noreferrer"
           target="_blank"
         >
-          <Image src={email} alt="email" />
+          <StyledEmail />
         </a>
       </div>
     </StyledSideBarWrapper>

@@ -271,10 +271,14 @@ const ShowcaseSection = () => {
               <TitleSpan secondary>Developer</TitleSpan>
             </HiddenSpanWrapper>
             <div>
-              <LargeLink shadow green>
-                About Me
-              </LargeLink>
-              <LargeLink shadow>Contact</LargeLink>
+              <a href="#about">
+                <LargeLink shadow green>
+                  About Me
+                </LargeLink>
+              </a>
+              <a href="#contact">
+                <LargeLink shadow>Contact</LargeLink>
+              </a>
             </div>
           </StyledHeading>
         </TextContainer>

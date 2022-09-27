@@ -10,6 +10,8 @@ import { HeadingSpan, HeadingWrapper } from "../components/HeadingComponents";
 import linkedin from "../assets/svgs/linkedin.svg";
 import email from "../assets/svgs/email.svg";
 import { devices } from "../assets/styles/GlobalStyles";
+import { StyledLinkedIn } from "../components/styledSvgs/StyledLinkedIn";
+import { StyledEmail } from "../components/styledSvgs/StyledEmail";
 
 const ContactMessage = styled.h4`
   font-size: 1.25rem;
@@ -40,16 +42,35 @@ const ContactWrapper = styled.div`
   background: ${({ theme }) => theme.colors.backgroundPrimary};
 
   a {
+    height: 100%;
+    width: 100%;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: ${({ theme }) => theme.colors.textPrimary};
-    margin: 1rem;
-  }
-
-  p {
-    text-align: center;
-    font-size: 1.25rem;
-    line-height: 0;
-    margin: 0.5rem 0 1rem 0;
+    div {
+      svg {
+        transition: 0.2s;
+        height: 80%;
+        width: 80%;
+        stroke: ${({ theme }) => theme.colors.blueHighlight};
+      }
+    }
+    &:hover {
+      div {
+        svg {
+          stroke: ${({ theme }) => theme.colors.textPrimary};
+        }
+      }
+    }
+    p {
+      margin: 0.5rem 0 1rem 0;
+      text-align: center;
+      font-size: 1.25rem;
+      line-height: 0;
+    }
   }
 
   &:after {
@@ -133,7 +154,7 @@ const ContactBlock = ({
 
 const ContactSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="contact">
       <TopBottomWrapper>
         <HeadingWrapper>
           <HeadingSpan bottom right />
@@ -144,24 +165,26 @@ const ContactSection = () => {
           Please feel free to contact me whenever you wish.
         </ContactMessage>
         <ContactBlockWrapper>
-          <ContactBlock
-            src={linkedin}
-            alt="Linkedin"
-            height={80}
-            width={80}
-            href="https://www.linkedin.com/in/mitchell-spaur-597b23143"
-            rel="noreferrer"
-            target="_blank"
-          />
-          <ContactBlock
-            src={email}
-            alt="Email"
-            height={80}
-            width={80}
-            href="mailto:mitchellspaur@gmail.com"
-            rel="noreferrer"
-            target="_blank"
-          />
+          <ContactWrapper>
+            <a
+              href="https://www.linkedin.com/in/mitchell-spaur-597b23143"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <StyledLinkedIn />
+              <p>LinkedIn</p>
+            </a>
+          </ContactWrapper>
+          <ContactWrapper>
+            <a
+              href="mailto:mitchellspaur@gmail.com"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <StyledEmail />
+              <p>Email</p>
+            </a>
+          </ContactWrapper>
         </ContactBlockWrapper>
       </TopBottomWrapper>
     </SectionContainer>
