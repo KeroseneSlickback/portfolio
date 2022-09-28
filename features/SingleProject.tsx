@@ -34,7 +34,7 @@ const PopupProjectWrapper = styled(ProjectWrapper)<{ view?: boolean }>`
   justify-content: center;
   align-items: center;
   width: 100%;
-  & > * {
+  > * {
     opacity: 0;
     transform: translateY(1rem);
   }
@@ -42,7 +42,7 @@ const PopupProjectWrapper = styled(ProjectWrapper)<{ view?: boolean }>`
   ${(props) =>
     props.view &&
     css`
-      div {
+      > * {
         animation: 0.6s cubic-bezier(0.7, 1, 0.7, 1) forwards ${popup};
         animation-delay: 0.4s;
       }

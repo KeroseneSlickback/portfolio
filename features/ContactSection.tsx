@@ -71,7 +71,7 @@ const ContactWrapper = styled.div`
       }
     }
     p {
-      margin: 0.5rem 0 1rem 0;
+      margin: 0.5rem 0 1.5rem 0;
       text-align: center;
       font-size: 1.25rem;
       line-height: 0;
@@ -83,11 +83,11 @@ const ContactWrapper = styled.div`
     transition: 0.2s;
     position: absolute;
     content: "";
-    bottom: -4%;
-    right: -4%;
+    bottom: -2%;
+    right: -2%;
     background: ${({ theme }) => theme.colors.greenHighlight};
-    width: 66%;
-    height: 66%;
+    width: 75%;
+    height: 75%;
     z-index: -1;
   }
 
@@ -96,23 +96,23 @@ const ContactWrapper = styled.div`
     transition: 0.2s;
     position: absolute;
     content: "";
-    top: -4%;
-    left: -4%;
+    top: -2%;
+    left: -2%;
     background: ${({ theme }) => theme.colors.greenHighlight};
-    width: 66%;
-    height: 66%;
+    width: 75%;
+    height: 75%;
     z-index: -1;
   }
 
   &:hover {
     box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
     &:after {
-      width: 108%;
-      height: 108%;
+      width: 104%;
+      height: 104%;
     }
     &:before {
-      width: 108%;
-      height: 108%;
+      width: 104%;
+      height: 104%;
     }
   }
 
