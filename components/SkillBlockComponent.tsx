@@ -4,57 +4,61 @@ import styled from "styled-components";
 const ImageWrap = styled.div`
   position: relative;
   display: flex;
+  width: 62px;
+  height: 62px;
+  padding: 2px;
+
+  &:after {
+    z-index: -1;
+    transition: 0.2s;
+    position: absolute;
+    content: "";
+    bottom: -14%;
+    right: -14%;
+    background-color: ${({ theme }) => theme.colors.greenHighlight};
+    width: 10%;
+    height: 10%;
+  }
+
+  &:before {
+    z-index: -1;
+    transition: 0.2s;
+    position: absolute;
+    content: "";
+    top: -14%;
+    left: -14%;
+    background-color: ${({ theme }) => theme.colors.greenHighlight};
+    width: 10%;
+    height: 10%;
+  }
+  &:hover {
+    &:after {
+      width: 128%;
+      height: 128%;
+    }
+    &:before {
+      width: 128%;
+      height: 128%;
+    }
+  }
+`;
+
+const PsuedoDiv = styled.div`
+  position: relative;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: ${({ theme }) => theme.colors.backgroundHighlight};
+  box-shadow: 0 0 0 9px ${({ theme }) => theme.colors.backgroundHighlight};
   gap: 0.75rem;
-  width: 54px;
-  height: 54px;
-  box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
-  background: ${({ theme }) => theme.colors.backgroundPrimary};
-
-  & > span {
-  }
+  width: 100%;
+  height: 100%;
 
   p {
     font-size: 0.75rem;
     line-height: 0;
     margin-bottom: 0.5rem;
-  }
-
-  &:after {
-    transition: 0.2s;
-    position: absolute;
-    content: "";
-    bottom: -18%;
-    right: -18%;
-    background: ${({ theme }) => theme.colors.greenHighlight};
-    width: 10%;
-    height: 10%;
-    z-index: -1;
-  }
-
-  &:before {
-    transition: 0.2s;
-    position: absolute;
-    content: "";
-    top: -18%;
-    left: -18%;
-    background: ${({ theme }) => theme.colors.greenHighlight};
-    width: 10%;
-    height: 10%;
-    z-index: -1;
-  }
-  &:hover {
-    box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
-    &:after {
-      width: 136%;
-      height: 136%;
-    }
-    &:before {
-      width: 136%;
-      height: 136%;
-    }
   }
 `;
 
@@ -63,14 +67,16 @@ const StyledImg = styled(Image)``;
 const SkillBlock = ({ alt, src, height, width }) => {
   return (
     <ImageWrap>
-      <StyledImg
-        alt={alt}
-        src={src}
-        quality={70}
-        height={height}
-        width={width}
-      />
-      <p>{alt}</p>
+      <PsuedoDiv>
+        <StyledImg
+          alt={alt}
+          src={src}
+          quality={70}
+          height={height}
+          width={width}
+        />
+        <p>{alt}</p>
+      </PsuedoDiv>
     </ImageWrap>
   );
 };

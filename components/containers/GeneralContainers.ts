@@ -67,12 +67,15 @@ export const MajorityWrapper = styled.div`
 `;
 
 export const BlockWrapper = styled.div`
-  width: 90%;
+  width: 96%;
   display: grid;
-  justify-items: stretch;
+  justify-items: center;
   justify-content: center;
   align-content: center;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
-  gap: 2rem;
+  gap: 1.75rem;
+  @media ${devices.mobileL} {
+    width: 90%;
+  }
 `;
