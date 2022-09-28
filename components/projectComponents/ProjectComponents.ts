@@ -64,7 +64,12 @@ export const ProjectImageWrapper = styled.div<{ alternative?: boolean }>`
 
 export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
   align-self: center;
-  background-color: rgba(29, 19, 67, 0.75);
+  background: rgb(29, 19, 67);
+  background: linear-gradient(
+    315deg,
+    rgba(29, 19, 67, 0.75) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   position: relative;
   display: flex;
   flex-direction: column;
@@ -126,6 +131,13 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
     props.alternative &&
     css`
       align-items: flex-start;
+      background: rgb(29, 19, 67);
+      background: linear-gradient(
+        45deg,
+        rgba(29, 19, 67, 0.75) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+
       h3 {
         color: ${({ theme }) => theme.colors.greenHighlight};
       }

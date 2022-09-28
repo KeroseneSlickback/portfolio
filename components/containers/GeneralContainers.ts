@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { devices } from "../../assets/styles/GlobalStyles";
 
 export const SectionContainer = styled.section<{
@@ -10,9 +10,9 @@ export const SectionContainer = styled.section<{
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  padding: 2rem 0;
+  padding: 4rem 0;
   gap: 2rem;
-
+  scroll-margin: 3rem;
   ${(props) =>
     props.styled &&
     css`
@@ -26,6 +26,7 @@ export const SectionContainer = styled.section<{
     `}
   @media ${devices.tabletM} {
     width: 100%;
+    scroll-margin: 0rem;
   }
 `;
 
@@ -35,6 +36,11 @@ export const TopBottomWrapper = styled.div<{ wider?: boolean }>`
   justify-content: center;
   align-items: center;
   width: 100%;
+  scroll-margin: 5rem;
+
+  @media ${devices.tabletM} {
+    scroll-margin: 0rem;
+  }
   @media ${devices.laptop} {
     max-width: 80%;
   }

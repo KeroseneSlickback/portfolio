@@ -14,6 +14,7 @@ import { StyledLinkedIn } from "../components/styledSvgs/StyledLinkedIn";
 import { StyledEmail } from "../components/styledSvgs/StyledEmail";
 
 const ContactMessage = styled.h4`
+  text-align: center;
   font-size: 1.25rem;
   margin-bottom: 4rem;
 `;

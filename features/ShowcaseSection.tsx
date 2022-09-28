@@ -184,15 +184,10 @@ const StyledHeading = styled.h1`
   display: flex;
   height: 100%;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  div {
-    padding: 1rem 0;
-    display: flex;
-    gap: 2rem;
-  }
 `;
 
 const HiddenSpanWrapper = styled.span`
@@ -249,6 +244,12 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
     `}
 `;
 
+const ButtonBox = styled.div`
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+`;
+
 const ShowcaseSection = () => {
   return (
     <SectionContainer styled noPadding>
@@ -270,7 +271,7 @@ const ShowcaseSection = () => {
             <HiddenSpanWrapper>
               <TitleSpan secondary>Developer</TitleSpan>
             </HiddenSpanWrapper>
-            <div>
+            <ButtonBox>
               <a href="#about">
                 <LargeLink shadow green>
                   About Me
@@ -279,7 +280,7 @@ const ShowcaseSection = () => {
               <a href="#contact">
                 <LargeLink shadow>Contact</LargeLink>
               </a>
-            </div>
+            </ButtonBox>
           </StyledHeading>
         </TextContainer>
         <GrowingSpan />

@@ -14,7 +14,7 @@ const AnimateScroll = ({ children }: Props) => {
       setVisibility(entry.isIntersecting);
     });
   }, []);
-  return < ref>{children}</>;
+  return <>{children}</>;
 };
 
 export default AnimateScroll;

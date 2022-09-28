@@ -1,11 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { devices } from "../../assets/styles/GlobalStyles";
-import github from "../../assets/svgs/github.svg";
-import linkedin from "../../assets/svgs/linkedin.svg";
-import email from "../../assets/svgs/email.svg";
 import { StyledGitHub } from "../../components/styledSvgs/StyledGitHub";
 import { StyledLinkedIn } from "../../components/styledSvgs/StyledLinkedIn";
 import { StyledEmail } from "../../components/styledSvgs/StyledEmail";
@@ -241,7 +237,7 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   a:after {
     content: "";
     position: absolute;
-    background-color: #67dea2;
+    background-color: ${({ theme }) => theme.colors.greenHighlight};
     height: 50%;
     width: 2px;
     bottom: 0;
@@ -252,7 +248,7 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   a:before {
     content: "";
     position: absolute;
-    background-color: #67dea2;
+    background-color: ${({ theme }) => theme.colors.greenHighlight};
     height: 2px;
     width: 50%;
     bottom: 0;
@@ -403,19 +399,29 @@ const Navbar = () => {
         <nav>
           <NavBarUL open={navBarVisible}>
             <li>
-              <a href="#about">About</a>
+              <a href="#about" onClick={toggleMobileNavBar}>
+                About
+              </a>
             </li>
             <li>
-              <a href="#projects">Projects</a>
+              <a href="#skills" onClick={toggleMobileNavBar}>
+                Skills
+              </a>
             </li>
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#projects" onClick={toggleMobileNavBar}>
+                Projects
+              </a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a href="#contact" onClick={toggleMobileNavBar}>
+                Contact
+              </a>
             </li>
             <li>
-              <a href="#">Resume</a>
+              <a href="#" onClick={toggleMobileNavBar}>
+                Resume
+              </a>
             </li>
             <div>
               <a

@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <FooterP>Built with ❤️ using NextJS/React.</FooterP>
-      <FooterP>All content © 2014-Present.</FooterP>
+      <FooterP>All content © 2022-Present.</FooterP>
     </StyledFooter>
   );
 };
