@@ -193,13 +193,12 @@ const StyledHeading = styled.h1`
 `;
 
 const HiddenSpanWrapper = styled.span`
-  height: 100%;
   width: 100%;
-  height: fit-content;
   display: flex;
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  height: 100%;
 
   @media ${devices.mobileM} {
     &:nth-child(1) {
@@ -238,13 +237,22 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
   transform: translateY(-100%);
   animation: 1s ${riseUp} ease-in-out forwards;
   animation-delay: 600ms;
-  font-size: clamp(3rem, 15vw, 5.5rem);
+  font-size: 7vh;
 
   ${(props) =>
     props.secondary &&
     css`
       color: ${({ theme }) => theme.colors.blueHighlight};
     `}
+  @media ${devices.mobileL} {
+    font-size: 9vh;
+  }
+  @media ${devices.tabletS} {
+    font-size: 10vh;
+  }
+  @media ${devices.tabletM} {
+    font-size: 11vh;
+  }
 `;
 
 const ButtonBox = styled.div`
