@@ -6,6 +6,10 @@ export const ProjectExpansionWrapper = styled.div`
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  padding: 0 0.5rem;
+  @media ${devices.mobileL} {
+    padding: 0 1rem;
+  }
   @media ${devices.laptopL} {
     max-width: 1390px;
   }
@@ -68,7 +72,7 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
   background: rgb(29, 19, 67);
   background: linear-gradient(
     315deg,
-    rgba(29, 19, 67, 0.75) 0%,
+    rgba(29, 19, 67, 0.75) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   position: relative;
@@ -80,6 +84,7 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
   padding: 1rem 1rem;
   gap: 1rem;
   margin-top: -15%;
+  min-height: 260px;
 
   &:after {
     content: "";
@@ -109,6 +114,8 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
   p {
     padding: 0rem 0.5rem;
     font-size: clamp(0.8125rem, 2vw, 1rem);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1), -1px -1px 2px rgba(0, 0, 0, 1),
+      -1px 1px 2px rgba(0, 0, 0, 1), 1px -1px 2px rgba(0, 0, 0, 1);
   }
   span {
     display: flex;
@@ -135,7 +142,7 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
       background: rgb(29, 19, 67);
       background: linear-gradient(
         45deg,
-        rgba(29, 19, 67, 0.75) 0%,
+        rgba(29, 19, 67, 0.75) 50%,
         rgba(255, 255, 255, 0) 100%
       );
 

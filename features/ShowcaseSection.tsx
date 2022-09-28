@@ -15,7 +15,7 @@ const grow = keyframes`
     opacity: 0.1;
   }
   50% {
-    height: 96%;
+    height: 100%;
     opacity: 0.5;
   }
   100% {
@@ -42,6 +42,7 @@ const ShowcaseWrapper = styled.div`
   gap: 0.25rem;
   height: calc(100vh - 7.5rem);
   width: 100%;
+  padding: 1rem;
 `;
 
 const TextContainer = styled.div`
@@ -54,6 +55,7 @@ const TextContainer = styled.div`
   height: 100%;
   width: 100%;
   z-index: 2;
+  padding: 1rem;
 `;
 
 const GrowingSpan = styled.span`
@@ -185,13 +187,13 @@ const StyledHeading = styled.h1`
   display: flex;
   height: 100%;
   width: 100%;
-  padding: 1rem 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
 const HiddenSpanWrapper = styled.span`
+  height: 100%;
   width: 100%;
   height: fit-content;
   display: flex;
@@ -236,7 +238,7 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
   transform: translateY(-100%);
   animation: 1s ${riseUp} ease-in-out forwards;
   animation-delay: 600ms;
-  font-size: clamp(3rem, 15vw, 5.25rem);
+  font-size: clamp(3rem, 15vw, 5.5rem);
 
   ${(props) =>
     props.secondary &&
