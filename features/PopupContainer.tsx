@@ -16,9 +16,10 @@ const popup = keyframes`
 
 const PopupWrapper = styled.div<{ view?: boolean }>`
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  div {
+  & > * {
     opacity: 0;
     transform: translateY(1rem);
   }

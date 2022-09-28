@@ -16,16 +16,22 @@ import {
   MediumButton,
   SmallButtonWrapper,
 } from "../components/buttons/Buttons";
+import Heading from "./Heading";
+import PopupContainer from "./PopupContainer";
 
 const ProjectsSection = () => {
   return (
     <SectionContainer styled id="projects">
       <TopBottomWrapper wider>
-        <HeadingWrapper>
-          <HeadingSpan top right blue />
-          <h2>Projects</h2>
-          <HeadingSpan bottom />
-        </HeadingWrapper>
+        <PopupContainer>
+          <Heading
+            text="Projects"
+            LSVert="top"
+            LSHorz="right"
+            LSColor="blue"
+            RSVert="bottom"
+          />
+        </PopupContainer>
         <ProjectExpansionWrapper>
           <ProjectWrapper>
             <ProjectImageWrapper>

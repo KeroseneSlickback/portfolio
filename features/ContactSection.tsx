@@ -12,6 +12,8 @@ import email from "../assets/svgs/email.svg";
 import { devices } from "../assets/styles/GlobalStyles";
 import { StyledLinkedIn } from "../components/styledSvgs/StyledLinkedIn";
 import { StyledEmail } from "../components/styledSvgs/StyledEmail";
+import Heading from "./Heading";
+import PopupContainer from "./PopupContainer";
 
 const ContactMessage = styled.h4`
   text-align: center;
@@ -39,11 +41,13 @@ const ContactWrapper = styled.div`
   align-items: center;
   width: 110px;
   height: 110px;
+  z-index: 2;
   box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
-  background: ${({ theme }) => theme.colors.backgroundPrimary};
+  background-color: ${({ theme }) => theme.colors.backgroundPrimary};
 
   a {
     height: 100%;
+    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
     width: 100%;
     text-decoration: none;
     display: flex;
@@ -75,11 +79,12 @@ const ContactWrapper = styled.div`
   }
 
   &:after {
+    z-index: -1;
     transition: 0.2s;
     position: absolute;
     content: "";
-    bottom: -9%;
-    right: -9%;
+    bottom: -4%;
+    right: -4%;
     background: ${({ theme }) => theme.colors.greenHighlight};
     width: 66%;
     height: 66%;
@@ -87,11 +92,12 @@ const ContactWrapper = styled.div`
   }
 
   &:before {
+    z-index: -1;
     transition: 0.2s;
     position: absolute;
     content: "";
-    top: -9%;
-    left: -9%;
+    top: -4%;
+    left: -4%;
     background: ${({ theme }) => theme.colors.greenHighlight};
     width: 66%;
     height: 66%;
@@ -101,12 +107,12 @@ const ContactWrapper = styled.div`
   &:hover {
     box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
     &:after {
-      width: 118%;
-      height: 118%;
+      width: 108%;
+      height: 108%;
     }
     &:before {
-      width: 118%;
-      height: 118%;
+      width: 108%;
+      height: 108%;
     }
   }
 
@@ -153,40 +159,57 @@ const ContactBlock = ({
   );
 };
 
+const ContactMessageWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
 const ContactSection = () => {
   return (
     <SectionContainer id="contact">
       <TopBottomWrapper>
-        <HeadingWrapper>
-          <HeadingSpan bottom right />
-          <h2>Get in touch</h2>
-          <HeadingSpan top blue />
-        </HeadingWrapper>
-        <ContactMessage>
-          Please feel free to contact me whenever you wish.
-        </ContactMessage>
-        <ContactBlockWrapper>
-          <ContactWrapper>
-            <a
-              href="https://www.linkedin.com/in/mitchell-spaur-597b23143"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <StyledLinkedIn />
-              <p>LinkedIn</p>
-            </a>
-          </ContactWrapper>
-          <ContactWrapper>
-            <a
-              href="mailto:mitchellspaur@gmail.com"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <StyledEmail />
-              <p>Email</p>
-            </a>
-          </ContactWrapper>
-        </ContactBlockWrapper>
+        <PopupContainer>
+          <Heading
+            text="Get in touch"
+            LSVert="bottom"
+            LSHorz="right"
+            RSVert="top"
+            RSColor="blue"
+          />
+        </PopupContainer>
+        <PopupContainer>
+          <ContactMessageWrapper>
+            <ContactMessage>
+              Please feel free to contact me whenever you wish.
+            </ContactMessage>
+          </ContactMessageWrapper>
+        </PopupContainer>
+        <PopupContainer>
+          <ContactBlockWrapper>
+            <ContactWrapper>
+              <a
+                href="https://www.linkedin.com/in/mitchell-spaur-597b23143"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <StyledLinkedIn />
+                <p>LinkedIn</p>
+              </a>
+            </ContactWrapper>
+            <ContactWrapper>
+              <a
+                href="mailto:mitchellspaur@gmail.com"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <StyledEmail />
+                <p>Email</p>
+              </a>
+            </ContactWrapper>
+          </ContactBlockWrapper>
+        </PopupContainer>
       </TopBottomWrapper>
     </SectionContainer>
   );
