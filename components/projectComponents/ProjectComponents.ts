@@ -4,6 +4,7 @@ import { devices } from "../../assets/styles/GlobalStyles";
 export const ProjectExpansionWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   width: 100%;
   @media ${devices.laptopL} {
     max-width: 1390px;
