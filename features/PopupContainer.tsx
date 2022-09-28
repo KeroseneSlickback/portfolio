@@ -14,7 +14,7 @@ const popup = keyframes`
 }
 `;
 
-const PopupWrapper = styled.div<{ view?: boolean }>`
+const PopupWrapper = styled.div<{ view?: boolean; delay?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,13 +32,21 @@ const PopupWrapper = styled.div<{ view?: boolean }>`
         animation-delay: 0.4s;
       }
     `}
+  ${(props) =>
+    props.delay &&
+    css`
+      div {
+        animation-delay: 1.2s;
+      }
+    `}
 `;
 
 interface Props {
   children: JSX.Element;
+  delay?: boolean;
 }
 
-const PopupContainer = ({ children }: Props) => {
+const PopupContainer = ({ children, delay }: Props) => {
   const [view, setView] = useState(false);
   const { ref, inView } = useInView();
 
@@ -48,7 +56,7 @@ const PopupContainer = ({ children }: Props) => {
     }
   }, [inView]);
   return (
-    <PopupWrapper ref={ref} view={view}>
+    <PopupWrapper ref={ref} view={view} delay={delay}>
       {children}
     </PopupWrapper>
   );

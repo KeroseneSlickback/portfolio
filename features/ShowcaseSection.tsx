@@ -5,6 +5,7 @@ import { devices } from "../assets/styles/GlobalStyles";
 import { LargeButton, LargeLink } from "../components/buttons/Buttons";
 import { SectionContainer } from "../components/containers/GeneralContainers";
 import { useFindWindowSize } from "../hooks/useFindWindowSize";
+import PopupContainer from "./PopupContainer";
 
 const animationSpeed = 333;
 
@@ -271,16 +272,18 @@ const ShowcaseSection = () => {
             <HiddenSpanWrapper>
               <TitleSpan secondary>Developer</TitleSpan>
             </HiddenSpanWrapper>
-            <ButtonBox>
-              <a href="#about">
-                <LargeLink shadow green>
-                  About Me
-                </LargeLink>
-              </a>
-              <a href="#contact">
-                <LargeLink shadow>Contact</LargeLink>
-              </a>
-            </ButtonBox>
+            <PopupContainer delay>
+              <ButtonBox>
+                <a href="#about">
+                  <LargeLink shadow green>
+                    About Me
+                  </LargeLink>
+                </a>
+                <a href="#contact">
+                  <LargeLink shadow>Contact</LargeLink>
+                </a>
+              </ButtonBox>
+            </PopupContainer>
           </StyledHeading>
         </TextContainer>
         <GrowingSpan />
