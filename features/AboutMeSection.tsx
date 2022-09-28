@@ -5,9 +5,8 @@ import {
   SectionContainer,
   TopBottomWrapper,
 } from "../components/containers/GeneralContainers";
-import { HeadingSpan, HeadingWrapper } from "../components/HeadingComponents";
 import { AboutMeP, AboutMeTextWrapper } from "../components/TextComponents";
-import straightshot from "../assets/images/straightshot.jpg";
+import straightshot from "../public/images/straightshot.jpg";
 import SkillBlock from "../components/SkillBlockComponent";
 import HTML5 from "../assets/svgs/HTML5.svg";
 import CSS from "../assets/svgs/CSS.svg";
@@ -27,7 +26,6 @@ import PopupContainer from "./PopupContainer";
 import PersonalInfo from "../data/personalInfo.json";
 
 const AboutMeSection = () => {
-  // console.log(PersonalInfo);
   return (
     <SectionContainer id="about">
       <TopBottomWrapper>

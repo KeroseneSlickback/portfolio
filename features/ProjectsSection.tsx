@@ -9,9 +9,13 @@ import PopupContainer from "./PopupContainer";
 import SingleProject from "./SingleProject";
 
 import Projects from "../data/projects.json";
+import MusicPlug from "../public/images/MusicPlug.png";
+import Yakumon from "../public/images/Yakumon.png";
+import KatoBeauty from "../public/images/KatoBeauty.png";
+import Portfolio from "../public/images/Portfolio.png";
+import Yambo from "../public/images/Yambo.png";
 
 const ProjectsSection = () => {
-  console.log(Projects);
   return (
     <SectionContainer styled id="projects">
       <TopBottomWrapper wider>
@@ -25,11 +29,11 @@ const ProjectsSection = () => {
           />
         </PopupContainer>
         <ProjectExpansionWrapper>
-          <SingleProject />
-          <SingleProject alternative />
-          <SingleProject />
-          <SingleProject alternative />
-          <SingleProject />
+          <SingleProject project={Projects[0]} photo={MusicPlug} />
+          <SingleProject project={Projects[1]} photo={Yakumon} alternative />
+          <SingleProject project={Projects[2]} photo={KatoBeauty} />
+          <SingleProject project={Projects[3]} photo={Portfolio} alternative />
+          <SingleProject project={Projects[4]} photo={Yambo} />
         </ProjectExpansionWrapper>
       </TopBottomWrapper>
     </SectionContainer>

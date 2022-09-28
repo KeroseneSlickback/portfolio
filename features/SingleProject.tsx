@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useEffect, useState } from "react";
 import {
   MediumButton,
@@ -9,13 +9,8 @@ import {
   ProjectImageWrapper,
   ProjectWrapper,
 } from "../components/projectComponents/ProjectComponents";
-import dummyImage from "../assets/images/dummyimage.jpeg";
 import styled, { css, keyframes } from "styled-components";
 import { useInView } from "react-intersection-observer";
-
-interface Props {
-  alternative?: boolean;
-}
 
 const popup = keyframes`
 0% {
@@ -49,7 +44,20 @@ const PopupProjectWrapper = styled(ProjectWrapper)<{ view?: boolean }>`
     `}
 `;
 
-const SingleProject = ({ alternative }: Props) => {
+interface ProjectType {
+  body: string;
+  tech: string;
+  title: string;
+  url: string;
+}
+
+interface Props {
+  alternative?: boolean;
+  project: ProjectType;
+  photo: StaticImageData;
+}
+
+const SingleProject = ({ alternative, project, photo }: Props) => {
   const [view, setView] = useState(false);
   const { ref, inView } = useInView({ threshold: 0.66 });
   useEffect(() => {
@@ -61,19 +69,14 @@ const SingleProject = ({ alternative }: Props) => {
     <PopupProjectWrapper alternative={alternative} ref={ref} view={view}>
       <ProjectImageWrapper alternative={alternative}>
         <div>
-          <Image src={dummyImage} alt="project" />
+          <Image src={photo} alt="project" />
         </div>
       </ProjectImageWrapper>
       <ProjectExplainWrapper alternative={alternative}>
-        <h3>MusicPlug</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam
-          temporibus repellat perspiciatis ullam tempore quisquam recusandae ab
-          omnis quam error necessitatibus quas, accusamus voluptatem dolorem,
-          cumque deserunt totam assumenda laborum!
-        </p>
+        <h3>{project.title}</h3>
+        <p>{project.body}</p>
         <span>
-          <p>React - MongoDB - Node - Express - Mongoose</p>
+          <p>{project.tech}</p>
         </span>
         <SmallButtonWrapper>
           <MediumButton green>GitHub</MediumButton>

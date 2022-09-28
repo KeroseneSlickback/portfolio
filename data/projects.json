@@ -2,26 +2,31 @@
   {
     "title": "MusicPlug",
     "tech": "React - Mongoose - MongoDB - Node/Express",
-    "body": "A music-recommendation social media platform to help people share their favorite songs with others and discover new music. Utilizes the Spotify API with OAuth2.0 authentication for user info, music search, and sharing. Has a full user/post/comment CRUD backend with strong pagination in React on the front."
+    "body": "A music-recommendation social media platform to help people share their favorite songs with others and discover new music. Utilizes the Spotify API with OAuth2.0 authentication for user info, music search, and sharing. Has a full user/post/comment CRUD backend with strong pagination in React on the front.",
+    "url": "https://musicplug.vercel.app/"
   },
   {
     "title": "Yakumon",
     "tech": "React(Typescript) - Mongoose - MongoDB - Node/Express",
-    "body": "A beauty-salon scheduling service portal focusing on a quick and easy user experience, with robust constrol for store owners and stylists. Heavy data/time manipulation on the frontend with full user/store/appointment CRUD backend. "
+    "body": "A beauty-salon scheduling service portal focusing on a quick and easy user experience, with robust constrol for store owners and stylists. Heavy data/time manipulation on the frontend with full user/store/appointment CRUD backend.",
+    "url": "https://yakumon.vercel.app/"
   },
   {
     "title": "Kato Beauty",
     "tech": "HTML - CSS/SCSS - Typescript",
-    "body": "A modern and elegant beauty salon store page with simplicity and speed in mind."
+    "body": "A modern and elegant beauty salon store page with simplicity and speed in mind.",
+    "url": "https://katobeauty.vercel.app/"
   },
   {
     "title": "My Portfolio",
     "tech": "NextJS(Typescript) - Styled-Components",
-    "body": "A refined portfolio with my personal favorite styling cues, incorporating technology such as Typescript and Styled-Components which I've grown to love."
+    "body": "A refined portfolio with my personal favorite styling cues, incorporating technology such as Typescript and Styled-Components which I've grown to love.",
+    "url": "/"
   },
   {
     "title": "Yambo Flashcards",
     "tech": "React(Typescript) - Mongoose - MongoDB - Node/Express",
-    "body": "A pet-project with my local developer group led by an experienced developer. We practice continuous integration and continuous deployment (CI/CD) pipeline operations, application testing with React-Testing/Jest library, and working as a group. My contributions are found in the backend and frontned organization, styling, and feature creation."
+    "body": "A pet-project with my local developer group led by an experienced developer. We practice continuous integration and continuous deployment (CI/CD) pipeline operations, application testing with React-Testing/Jest library, and working as a group. My contributions are found in the backend and frontned organization, styling, and feature creation.",
+    "url": "https://d2dssvchhso94g.cloudfront.net/"
   }
 ]
