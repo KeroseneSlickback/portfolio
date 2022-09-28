@@ -24,7 +24,10 @@ import ImageComponent from "../components/ImageComponent";
 import Heading from "./Heading";
 import PopupContainer from "./PopupContainer";
 
+import PersonalInfo from "../data/personalInfo.json";
+
 const AboutMeSection = () => {
+  // console.log(PersonalInfo);
   return (
     <SectionContainer id="about">
       <TopBottomWrapper>

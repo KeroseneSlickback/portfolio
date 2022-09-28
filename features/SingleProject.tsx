@@ -44,14 +44,14 @@ const PopupProjectWrapper = styled(ProjectWrapper)<{ view?: boolean }>`
     css`
       > * {
         animation: 0.6s cubic-bezier(0.7, 1, 0.7, 1) forwards ${popup};
-        animation-delay: 0.4s;
+        /* animation-delay: 0.4s; */
       }
     `}
 `;
 
 const SingleProject = ({ alternative }: Props) => {
   const [view, setView] = useState(false);
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({ threshold: 0.66 });
   useEffect(() => {
     if (inView) {
       setView(true);

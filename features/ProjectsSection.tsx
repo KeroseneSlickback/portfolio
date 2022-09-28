@@ -1,24 +1,17 @@
-import Image from "next/image";
 import React from "react";
 import {
   SectionContainer,
   TopBottomWrapper,
 } from "../components/containers/GeneralContainers";
-import {
-  ProjectExpansionWrapper,
-  ProjectExplainWrapper,
-  ProjectImageWrapper,
-  ProjectWrapper,
-} from "../components/projectComponents/ProjectComponents";
-import {
-  MediumButton,
-  SmallButtonWrapper,
-} from "../components/buttons/Buttons";
+import { ProjectExpansionWrapper } from "../components/projectComponents/ProjectComponents";
 import Heading from "./Heading";
 import PopupContainer from "./PopupContainer";
 import SingleProject from "./SingleProject";
 
+import Projects from "../data/projects.json";
+
 const ProjectsSection = () => {
+  console.log(Projects);
   return (
     <SectionContainer styled id="projects">
       <TopBottomWrapper wider>
