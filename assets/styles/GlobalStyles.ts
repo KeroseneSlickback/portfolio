@@ -57,6 +57,7 @@ export const devices = {
 };
 
 export const GlobalStyles = createGlobalStyle` 
+
   body {
     background-color: ${({ theme }) => theme.colors.backgroundPrimary};
     color: ${({ theme }) => theme.colors.textPrimary};

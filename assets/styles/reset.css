@@ -76,3 +76,8 @@ svg {
     scroll-behavior: auto !important;
   }
 } /*# sourceMappingURL=cssReset.css.map */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf");
+}

@@ -19,6 +19,6 @@ export const FocusP = styled.p`
 `;
 
 export const AboutMeP = styled.p`
-  font-size: clamp(0.825em, 2vw, 1em);
+  font-size: clamp(0.9125em, 2vw, 1.125em);
   line-height: 1.6;
 `;

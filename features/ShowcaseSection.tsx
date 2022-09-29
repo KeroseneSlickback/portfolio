@@ -237,6 +237,7 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
   transform: translateY(-100%);
   animation: 1s ${riseUp} ease-in-out forwards;
   font-size: 8vh;
+  font-weight: 600;
 
   ${(props) =>
     props.secondary &&
