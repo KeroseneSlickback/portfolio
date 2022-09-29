@@ -192,11 +192,11 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
   padding: 4rem 0rem 0rem 0rem;
   margin: 0;
   list-style-type: none;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.15s linear;
   transform: translateX(100%);
   li,
   div {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.33s ease-in-out;
     transform: translateX(100%);
     display: flex;
     align-items: center;
@@ -205,22 +205,22 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
     height: 100%;
     width: 100%;
     &:nth-child(2) {
-      transition-delay: 50ms;
+      transition-delay: 60ms;
     }
     &:nth-child(3) {
-      transition-delay: 100ms;
+      transition-delay: 120ms;
     }
     &:nth-child(4) {
-      transition-delay: 150ms;
+      transition-delay: 180ms;
     }
     &:nth-child(5) {
-      transition-delay: 200ms;
+      transition-delay: 240ms;
     }
     &:nth-child(6) {
-      transition-delay: 250ms;
+      transition-delay: 300ms;
     }
     &:nth-child(7) {
-      transition-delay: 300ms;
+      transition-delay: 360ms;
     }
   }
 
@@ -229,7 +229,7 @@ const NavBarUL = styled.ul<{ open?: boolean }>`
     font-size: 1.75rem;
     line-height: 1;
     color: ${({ theme }) => theme.colors.textPrimary};
-    transition: 0.15s;
+    transition: 0.16s;
     padding: 0.5rem 0.75rem;
     text-decoration: none;
   }
