@@ -12,6 +12,13 @@ export const AboutMeTextWrapper = styled.div`
   }
 `;
 
+export const FocusP = styled.p`
+  text-align: center;
+  font-size: clamp(1.25em, 2vw, 1.5em);
+  margin-bottom: 0.5rem;
+`;
+
 export const AboutMeP = styled.p`
   font-size: clamp(0.825em, 2vw, 1em);
+  line-height: 1.6;
 `;

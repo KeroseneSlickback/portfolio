@@ -5,8 +5,11 @@ import {
   SectionContainer,
   TopBottomWrapper,
 } from "../components/containers/GeneralContainers";
-import { AboutMeP, AboutMeTextWrapper } from "../components/TextComponents";
-import straightshot from "../public/images/straightshot.jpg";
+import {
+  AboutMeP,
+  AboutMeTextWrapper,
+  FocusP,
+} from "../components/TextComponents";
 import SkillBlock from "../components/SkillBlockComponent";
 import HTML5 from "../assets/svgs/HTML5.svg";
 import CSS from "../assets/svgs/CSS.svg";
@@ -24,11 +27,12 @@ import Heading from "./Heading";
 import PopupContainer from "./PopupContainer";
 
 import PersonalInfo from "../data/personalInfo.json";
+import selfphoto from "../public/images/selfphoto.jpg";
 
 const AboutMeSection = () => {
   return (
-    <SectionContainer id="about">
-      <TopBottomWrapper>
+    <SectionContainer>
+      <TopBottomWrapper id="about">
         <PopupContainer>
           <Heading
             text="About Me"
@@ -42,30 +46,12 @@ const AboutMeSection = () => {
         <PopupContainer>
           <MajorityWrapper>
             <AboutMeTextWrapper>
-              <AboutMeP>
-                Praesent vestibulum augue ac efficitur tempus. Sed a risus eu
-                nisl egestas maximus. Nunc elementum quam quis risus ornare, ut
-                tristique ipsum lacinia. Nunc lacinia, nulla vel lobortis
-                molestie, nulla justo eleifend nisl, vitae posuere nisi lorem eu
-                ligula. Class aptent taciti sociosqu ad litora torquent per
-                conubia nostra, per inceptos himenaeos.
-              </AboutMeP>
-              <AboutMeP>
-                Integer nunc dolor, ultricies tempus molestie nec, interdum vel
-                odio. Aliquam vel gravida dui. Nam non faucibus ipsum, a
-                hendrerit leo. Ut id tellus non leo facilisis suscipit id eget
-                quam. Cras maximus, ligula vel rhoncus tempus, est augue
-                vulputate nulla, euismod tempor est sem ac quam. Proin mollis
-                ullamcorper pellentesque.
-              </AboutMeP>{" "}
-              <AboutMeP>
-                Praesent vestibulum libero risus, ac volutpat orci rhoncus eu.
-                Pellentesque posuere ante fringilla erat tristique malesuada. In
-                felis ex, sagittis nec vulputate nec, tristique nec leo.
-              </AboutMeP>
+              <FocusP>{PersonalInfo.firstPara}</FocusP>
+              <AboutMeP>{PersonalInfo.secondPara}</AboutMeP>
+              <AboutMeP>{PersonalInfo.thirdPara}</AboutMeP>
             </AboutMeTextWrapper>
             <ImageComponent
-              src={straightshot}
+              src={selfphoto}
               alt="Mitchell William Spaur"
               height={300}
               width={300}

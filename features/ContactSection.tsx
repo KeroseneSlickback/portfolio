@@ -169,8 +169,8 @@ const ContactMessageWrapper = styled.div`
 
 const ContactSection = () => {
   return (
-    <SectionContainer id="contact">
-      <TopBottomWrapper>
+    <SectionContainer>
+      <TopBottomWrapper id="contact">
         <PopupContainer>
           <Heading
             text="Get in touch"

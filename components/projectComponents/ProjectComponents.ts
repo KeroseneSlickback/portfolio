@@ -81,7 +81,7 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
   align-items: flex-end;
   justify-content: space-evenly;
   z-index: 2;
-  padding: 1rem 1rem;
+  padding: 1rem 1.5rem;
   gap: 0.75rem;
   margin-top: -15%;
   min-height: 260px;
@@ -108,11 +108,13 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
 
   h3 {
     font-size: clamp(1.6125rem, 4vw, 2rem);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75),
+      -2px -2px 2px rgba(0, 0, 0, 0.75), -2px 2px 2px rgba(0, 0, 0, 0.75),
+      2px -2px 2px rgba(0, 0, 0, 0.75);
     line-height: 1;
     color: ${({ theme }) => theme.colors.blueHighlight};
   }
   p {
-    padding: 0rem 0.5rem;
     font-size: clamp(0.8125rem, 2vw, 1rem);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75),
       -1px -1px 2px rgba(0, 0, 0, 0.75), -1px 1px 2px rgba(0, 0, 0, 0.75),
