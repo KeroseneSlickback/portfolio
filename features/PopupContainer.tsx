@@ -47,7 +47,7 @@ interface Props {
 
 const PopupContainer = ({ children, delay }: Props) => {
   const [view, setView] = useState(false);
-  const { ref, inView } = useInView({ threshold: 0.75 });
+  const { ref, inView } = useInView({ threshold: 0.33 });
 
   useEffect(() => {
     if (inView) {

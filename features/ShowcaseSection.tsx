@@ -55,7 +55,7 @@ const TextContainer = styled.div`
   height: 100%;
   width: 100%;
   z-index: 2;
-  padding: 1rem;
+  padding: 1rem 0rem;
 `;
 
 const GrowingSpan = styled.span`
@@ -236,7 +236,7 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
     0.25rem -0.25rem 0.5rem rgba(0, 0, 0, 1);
   transform: translateY(-100%);
   animation: 1s ${riseUp} ease-in-out forwards;
-  font-size: 7vh;
+  font-size: 8vh;
 
   ${(props) =>
     props.secondary &&
@@ -257,7 +257,7 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
 const ButtonBox = styled.div`
   display: flex;
   gap: 2rem;
-  margin-top: 1.5rem;
+  margin: 1rem 0rem;
 `;
 
 const ShowcaseSection = () => {

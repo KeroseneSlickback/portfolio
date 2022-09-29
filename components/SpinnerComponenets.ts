@@ -20,7 +20,7 @@ const spin = keyframes`
     scale: 0;
     transform: rotate(180deg);
   }
-  50% {
+  60% {
     scale: 1;
     opacity: 1;
     transform: rotate(360deg);
