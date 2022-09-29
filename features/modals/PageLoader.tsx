@@ -8,14 +8,17 @@ import {
   SpinnerWrapper,
 } from "../../components/SpinnerComponenets";
 
-const PageLoader = () => {
+interface Props {
+  children: React.ReactElement<any, any>;
+}
+
+const PageLoader = ({ children }: Props) => {
   const context = useContext(Context);
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (context.initialLoad) {
-      setLoading(true);
       setTimeout(() => {
         setLoading(false);
         context.toggleInitialLoad();
@@ -43,14 +46,14 @@ const PageLoader = () => {
     };
   });
 
-  return (
-    loading && (
-      <SpinnerWrapper>
-        <SpinnerContainer>
-          <SpinnerText>M</SpinnerText>
-        </SpinnerContainer>
-      </SpinnerWrapper>
-    )
+  return loading ? (
+    <SpinnerWrapper>
+      <SpinnerContainer>
+        <SpinnerText>M</SpinnerText>
+      </SpinnerContainer>
+    </SpinnerWrapper>
+  ) : (
+    <>{children}</>
   );
 };
 

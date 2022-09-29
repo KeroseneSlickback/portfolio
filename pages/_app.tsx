@@ -10,8 +10,9 @@ function MyApp({ Component, pageProps }) {
     <ContextProvider>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <PageLoader />
-        <Component {...pageProps} />
+        <PageLoader>
+          <Component {...pageProps} />
+        </PageLoader>
       </ThemeProvider>
     </ContextProvider>
   );

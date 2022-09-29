@@ -29,14 +29,13 @@ const PopupWrapper = styled.div<{ view?: boolean; delay?: boolean }>`
     css`
       div {
         animation: 0.6s cubic-bezier(0.7, 1, 0.7, 1) forwards ${popup};
-        /* animation-delay: 0.4s; */
       }
     `}
   ${(props) =>
     props.delay &&
     css`
       div {
-        animation-delay: 1.2s;
+        animation-delay: 0.4s;
       }
     `}
 `;

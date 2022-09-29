@@ -236,7 +236,6 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
     0.25rem -0.25rem 0.5rem rgba(0, 0, 0, 1);
   transform: translateY(-100%);
   animation: 1s ${riseUp} ease-in-out forwards;
-  animation-delay: 600ms;
   font-size: 7vh;
 
   ${(props) =>
