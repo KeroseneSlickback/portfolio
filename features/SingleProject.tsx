@@ -48,7 +48,8 @@ interface ProjectType {
   body: string;
   tech: string;
   title: string;
-  url: string;
+  siteUrl: string;
+  gitHubUrl: string;
 }
 
 interface Props {
@@ -79,10 +80,14 @@ const SingleProject = ({ alternative, project, photo }: Props) => {
           <p>{project.tech}</p>
         </span>
         <SmallButtonWrapper>
-          <MediumButton shadow green>
-            GitHub
-          </MediumButton>
-          <MediumButton shadow>Live Site</MediumButton>
+          <a href={project.gitHubUrl} rel="noreferrer" target="_blank">
+            <MediumButton shadow green>
+              GitHub
+            </MediumButton>
+          </a>
+          <a href={project.siteUrl} rel="noreferrer" target="_blank">
+            <MediumButton shadow>Live Site</MediumButton>
+          </a>
         </SmallButtonWrapper>
       </ProjectExplainWrapper>
     </PopupProjectWrapper>
