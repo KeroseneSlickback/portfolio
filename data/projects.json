@@ -30,7 +30,7 @@
   {
     "title": "Yambo Flashcards",
     "tech": "React(Typescript) - Mongoose - MongoDB - Node/Express",
-    "body": "A pet-project with my local developer group led by an experienced developer. We practice continuous integration and continuous deployment (CI/CD) pipeline operations, application testing with React-Testing/Jest library, and working as a group. My contributions are found in the backend and frontned organization, styling, and feature creation.",
+    "body": "A pet-project with my local developer group led by an experienced developer. We practice continuous integration and continuous deployment (CI/CD) pipeline operations, test-driven development (TDD) with React-Testing/Jest library, and working as a group. My contributions are found in the backend and frontned organization, styling, and feature creation.",
     "siteUrl": "https://d2dssvchhso94g.cloudfront.net/",
     "gitHubUrl": "https://github.com/mwhitman189/yambo-flashcards"
   }

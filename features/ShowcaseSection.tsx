@@ -307,6 +307,7 @@ const ShowcaseSection = () => {
         <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />
+        {/* <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />
@@ -330,8 +331,7 @@ const ShowcaseSection = () => {
         <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
+        <GrowingSpan /> */}
       </ShowcaseWrapper>
     </SectionContainer>
   );
