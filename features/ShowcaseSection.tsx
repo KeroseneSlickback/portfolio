@@ -39,7 +39,7 @@ const ShowcaseWrapper = styled.div`
   overflow: hidden;
   justify-content: space-evenly;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   height: calc(100vh - 7.5rem);
   width: 100%;
   padding: 1rem;
@@ -62,7 +62,7 @@ const GrowingSpan = styled.span`
   display: block;
   height: 96%;
   width: 10%;
-  border-radius: 0.25rem;
+  border-radius: 0.125rem;
   background: ${({ theme }) => theme.colors.greenHighlight};
   opacity: 0.1;
   animation: 3s cubic-bezier(0.1, 0, 0.9, 1) infinite ${grow};
