@@ -46,7 +46,7 @@ export const SpinnerWrapper = styled.div`
   top: 0;
   left: 0;
   z-index: 9999;
-  animation: ${fadeOut} 0.6s linear;
+  animation: ${fadeOut} 1s linear;
 `;
 
 export const SpinnerContainer = styled.div`
@@ -57,7 +57,7 @@ export const SpinnerContainer = styled.div`
   justify-content: center;
   align-items: center;
   scale: 0;
-  animation: ${spin} 0.6s cubic-bezier(0, 0.75, 0.5, 1);
+  animation: ${spin} 1s cubic-bezier(0, 0.75, 0.5, 1);
 `;
 
 export const SpinnerText = styled.p`

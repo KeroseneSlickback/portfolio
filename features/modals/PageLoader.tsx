@@ -22,7 +22,7 @@ const PageLoader = ({ children }: Props) => {
       setTimeout(() => {
         setLoading(false);
         context.toggleInitialLoad();
-      }, 600);
+      }, 1000);
     }
   }, [context]);
 
@@ -33,7 +33,7 @@ const PageLoader = ({ children }: Props) => {
       url === router.asPath &&
       setTimeout(() => {
         setLoading(false);
-      }, 600);
+      }, 1000);
 
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
