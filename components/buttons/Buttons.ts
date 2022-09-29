@@ -29,8 +29,9 @@ export const SmallButton = styled.button<{ shadow?: boolean; green?: boolean }>`
   ${(props) =>
     props.shadow &&
     css`
-      text-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 1),
-        -0.25rem -0.25rem 0.25rem rgba(0, 0, 0, 1);
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75),
+        -2px -2px 2px rgba(0, 0, 0, 0.75), -2px 2px 2px rgba(0, 0, 0, 0.75),
+        2px -2px 2px rgba(0, 0, 0, 0.75);
     `}
   ${(props) =>
     props.green &&

@@ -79,10 +79,10 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-evenly;
   z-index: 2;
   padding: 1rem 1rem;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-top: -15%;
   min-height: 260px;
 
@@ -114,8 +114,9 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
   p {
     padding: 0rem 0.5rem;
     font-size: clamp(0.8125rem, 2vw, 1rem);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1), -1px -1px 2px rgba(0, 0, 0, 1),
-      -1px 1px 2px rgba(0, 0, 0, 1), 1px -1px 2px rgba(0, 0, 0, 1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75),
+      -1px -1px 2px rgba(0, 0, 0, 0.75), -1px 1px 2px rgba(0, 0, 0, 0.75),
+      1px -1px 2px rgba(0, 0, 0, 0.75);
   }
   span {
     display: flex;
@@ -125,6 +126,7 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
     p {
       padding: 0rem;
       font-size: clamp(0.6125rem, 2vw, 0.8125rem);
+      color: ${({ theme }) => theme.colors.blueHighlight};
     }
   }
 
@@ -148,6 +150,11 @@ export const ProjectExplainWrapper = styled.div<{ alternative?: boolean }>`
 
       h3 {
         color: ${({ theme }) => theme.colors.greenHighlight};
+      }
+      span {
+        p {
+          color: ${({ theme }) => theme.colors.greenHighlight};
+        }
       }
       &:after {
         background-color: rgba(103, 222, 162, 0.5);

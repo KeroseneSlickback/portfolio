@@ -79,8 +79,10 @@ const SingleProject = ({ alternative, project, photo }: Props) => {
           <p>{project.tech}</p>
         </span>
         <SmallButtonWrapper>
-          <MediumButton green>GitHub</MediumButton>
-          <MediumButton>Live Site</MediumButton>
+          <MediumButton shadow green>
+            GitHub
+          </MediumButton>
+          <MediumButton shadow>Live Site</MediumButton>
         </SmallButtonWrapper>
       </ProjectExplainWrapper>
     </PopupProjectWrapper>
