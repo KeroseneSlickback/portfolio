@@ -9,8 +9,9 @@ export const HeadingWrapper = styled.div`
   align-items: center;
   margin-bottom: 2rem;
   gap: 1rem;
+  margin: 1rem 0 2rem 0;
   h2 {
-    font-size: clamp(1.75rem, 5vw, 2rem);
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
     width: max-content;
   }
   @media ${devices.mobileL} {

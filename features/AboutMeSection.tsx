@@ -22,6 +22,19 @@ import Jest from "../assets/svgs/Jest.svg";
 import NextJS from "../assets/svgs/NextJS.svg";
 import Express from "../assets/svgs/Express.svg";
 import GithubIcon from "../assets/svgs/GithubIcon.svg";
+import Figma from "../assets/svgs/Figma.svg";
+import NPM from "../assets/svgs/NPM.svg";
+import SASS from "../assets/svgs/SASS.svg";
+import Webpack from "../assets/svgs/Webpack.svg";
+import Git from "../assets/svgs/Git.svg";
+import Bootstrap from "../assets/svgs/Bootstrap.svg";
+import Tailwind from "../assets/svgs/Tailwind.svg";
+import Vite from "../assets/svgs/Vite.svg";
+import Postman from "../assets/svgs/Postman.svg";
+
+import MongooseJS from "../public/images/icons/MongooseJS.png";
+import StyledComponents from "../public/images/icons/StyledComponents.png";
+
 import ImageComponent from "../components/ImageComponent";
 import Heading from "./Heading";
 import PopupContainer from "./PopupContainer";
@@ -72,27 +85,28 @@ const AboutMeSection = () => {
         </PopupContainer>
         <PopupContainer>
           <BlockWrapper>
-            <SkillBlock src={HTML5} alt="HTML5" height={54} width={54} />
-            <SkillBlock src={CSS} alt="CSS" height={54} width={54} />
-            <SkillBlock
-              src={Javascript}
-              alt="Javascript"
-              height={54}
-              width={54}
-            />
-            <SkillBlock
-              src={Typescript}
-              alt="Typescript"
-              height={54}
-              width={54}
-            />
-            <SkillBlock src={ReactSVG} alt="React" height={54} width={54} />
-            <SkillBlock src={Node} alt="Node" height={54} width={54} />
-            <SkillBlock src={Express} alt="Express" height={54} width={54} />
-            <SkillBlock src={MongoDB} alt="MongoDB" height={54} width={54} />
-            <SkillBlock src={Jest} alt="Jest" height={54} width={54} />
-            <SkillBlock src={NextJS} alt="NextJS" height={54} width={54} />
-            <SkillBlock src={GithubIcon} alt="Github" height={54} width={54} />
+            <SkillBlock src={HTML5} alt="HTML5" />
+            <SkillBlock src={CSS} alt="CSS" />
+            <SkillBlock src={Javascript} alt="Javascript" />
+            <SkillBlock src={Typescript} alt="Typescript" />
+            <SkillBlock src={ReactSVG} alt="React" />
+            <SkillBlock src={NextJS} alt="NextJS" />
+            <SkillBlock src={Node} alt="Node" />
+            <SkillBlock src={Express} alt="Express" />
+            <SkillBlock src={MongooseJS} alt="Mongoose" />
+            <SkillBlock src={MongoDB} alt="MongoDB" />
+            <SkillBlock src={Jest} alt="Jest" />
+            <SkillBlock src={Git} alt="Git" />
+            <SkillBlock src={GithubIcon} alt="Github" />
+            <SkillBlock src={Figma} alt="Figma" />
+            <SkillBlock src={Postman} alt="Postman" />
+            <SkillBlock src={NPM} alt="NPM" />
+            <SkillBlock src={Webpack} alt="Webpack" />
+            <SkillBlock src={Vite} alt="Vite" />
+            <SkillBlock src={StyledComponents} alt="StyledComp" />
+            <SkillBlock src={SASS} alt="SASS" />
+            <SkillBlock src={Bootstrap} alt="Bootstrap" />
+            <SkillBlock src={Tailwind} alt="Tailwind" />
           </BlockWrapper>
         </PopupContainer>
       </TopBottomWrapper>

@@ -10,7 +10,7 @@ export const SectionContainer = styled.section<{
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  padding: 4rem 0;
+  padding: 3rem 0;
   gap: 2rem;
   scroll-margin: 3rem;
   ${(props) =>
@@ -74,6 +74,7 @@ export const BlockWrapper = styled.div`
   align-content: center;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
+  margin-top: 1rem;
   gap: 1.75rem;
   @media ${devices.mobileL} {
     width: 90%;

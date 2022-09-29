@@ -4,8 +4,8 @@ import styled from "styled-components";
 const ImageWrap = styled.div`
   position: relative;
   display: flex;
-  width: 62px;
-  height: 62px;
+  width: 60px;
+  height: 60px;
   padding: 2px;
 
   &:after {
@@ -64,17 +64,11 @@ const PsuedoDiv = styled.div`
 
 const StyledImg = styled(Image)``;
 
-const SkillBlock = ({ alt, src, height, width }) => {
+const SkillBlock = ({ alt, src }) => {
   return (
     <ImageWrap>
       <PsuedoDiv>
-        <StyledImg
-          alt={alt}
-          src={src}
-          quality={70}
-          height={height}
-          width={width}
-        />
+        <StyledImg alt={alt} src={src} />
         <p>{alt}</p>
       </PsuedoDiv>
     </ImageWrap>
