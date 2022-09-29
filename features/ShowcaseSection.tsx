@@ -11,7 +11,7 @@ const animationSpeed = 333;
 
 const grow = keyframes`
   0% {
-    height: 44%;
+    height: 96%;
     opacity: 0.1;
   }
   50% {
@@ -19,7 +19,7 @@ const grow = keyframes`
     opacity: 0.5;
   }
   100% {
-    height: 44%;
+    height: 96%;
     opacity: 0.1;
   }
 `;
@@ -39,7 +39,7 @@ const ShowcaseWrapper = styled.div`
   overflow: hidden;
   justify-content: space-evenly;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   height: calc(100vh - 7.5rem);
   width: 100%;
   padding: 1rem;
@@ -60,8 +60,8 @@ const TextContainer = styled.div`
 
 const GrowingSpan = styled.span`
   display: block;
-  height: 44%;
-  width: 1%;
+  height: 96%;
+  width: 10%;
   border-radius: 0.25rem;
   background: ${({ theme }) => theme.colors.greenHighlight};
   opacity: 0.1;
@@ -114,72 +114,6 @@ const GrowingSpan = styled.span`
   }
   &:nth-child(16) {
     animation-delay: ${animationSpeed * 8}ms;
-  }
-  &:nth-child(17) {
-    animation-delay: ${animationSpeed * 8.5}ms;
-  }
-  &:nth-child(18) {
-    animation-delay: ${animationSpeed * 9}ms;
-  }
-  &:nth-child(19) {
-    animation-delay: ${animationSpeed * 9.5}ms;
-  }
-  &:nth-child(20) {
-    animation-delay: ${animationSpeed * 10}ms;
-  }
-  &:nth-child(21) {
-    animation-delay: ${animationSpeed * 10.5}ms;
-  }
-  &:nth-child(22) {
-    animation-delay: ${animationSpeed * 11}ms;
-  }
-  &:nth-child(23) {
-    animation-delay: ${animationSpeed * 11.5}ms;
-  }
-  &:nth-child(24) {
-    animation-delay: ${animationSpeed * 12}ms;
-  }
-  &:nth-child(25) {
-    animation-delay: ${animationSpeed * 12.5}ms;
-  }
-  &:nth-child(26) {
-    animation-delay: ${animationSpeed * 13}ms;
-  }
-  &:nth-child(27) {
-    animation-delay: ${animationSpeed * 13.5}ms;
-  }
-  &:nth-child(28) {
-    animation-delay: ${animationSpeed * 14}ms;
-  }
-  &:nth-child(29) {
-    animation-delay: ${animationSpeed * 14.5}ms;
-  }
-  &:nth-child(30) {
-    animation-delay: ${animationSpeed * 15}ms;
-  }
-  &:nth-child(31) {
-    animation-delay: ${animationSpeed * 15.5}ms;
-  }
-  &:nth-child(32) {
-    animation-delay: ${animationSpeed * 16}ms;
-  }
-  &:nth-child(33) {
-    animation-delay: ${animationSpeed * 16.5}ms;
-  }
-  &:nth-child(34) {
-    animation-delay: ${animationSpeed * 17}ms;
-  }
-  &:nth-child(35) {
-    animation-delay: ${animationSpeed * 17.5}ms;
-  }
-  &:nth-child(36) {
-    animation-delay: ${animationSpeed * 18}ms;
-  }
-  &:nth-child(37) {
-    animation-delay: ${animationSpeed * 18.5}ms;
-  }
-  &:nth-child(38) {
-    animation-delay: ${animationSpeed * 19}ms;
   }
 `;
 
@@ -307,31 +241,10 @@ const ShowcaseSection = () => {
         <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />
-        {/* <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />
         <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan /> */}
       </ShowcaseWrapper>
     </SectionContainer>
   );
