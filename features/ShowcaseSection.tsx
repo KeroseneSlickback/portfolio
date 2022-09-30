@@ -11,7 +11,7 @@ const animationSpeed = 333;
 
 const grow = keyframes`
   0% {
-    height: 96%;
+    height: 99%;
     opacity: 0.1;
   }
   50% {
@@ -19,7 +19,7 @@ const grow = keyframes`
     opacity: 0.5;
   }
   100% {
-    height: 96%;
+    height: 99%;
     opacity: 0.1;
   }
 `;
@@ -60,7 +60,7 @@ const TextContainer = styled.div`
 
 const GrowingSpan = styled.span`
   display: block;
-  height: 96%;
+  height: 99%;
   width: 10%;
   border-radius: 0.125rem;
   background: ${({ theme }) => theme.colors.greenHighlight};
