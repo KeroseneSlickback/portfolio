@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled, { css, keyframes } from "styled-components";
-import { devices } from "../assets/styles/GlobalStyles";
-import { LargeLink } from "../components/buttons/Buttons";
 import { SectionContainer } from "../components/containers/GeneralContainers";
 import { StyledChevron } from "../components/styledSvgs/StyledChevron";
 import PopupContainer from "./PopupContainer";
-import SlideAndRevealContainer from "./SlideAndRevearlContainer";
-
-const otherTitles = [
-  "Disco DJ",
-  "Ramen Connoisseur",
-  "Lover of Flowers",
-  "Casual Fiction Novelist and Poet",
-];
+import ShowcaseTransition from "./ShowcaseTransition";
 
 const bounce = keyframes`
   0% {
@@ -26,54 +17,61 @@ const bounce = keyframes`
   }
 `;
 
+const wordFlip = keyframes`
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+`;
+
 const ShowcaseWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 0.25rem;
+  align-items: flex-start;
   height: calc(100vh - 7.5rem);
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
 `;
 
 const TextContainer = styled.div`
-  display: grid;
-  grid-template-rows: 36px 100px 76px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
   height: 100%;
-  width: 90%;
+  width: 100%;
   z-index: 2;
+  gap: 1rem;
+  padding: 2rem;
 `;
 
 const StyledH3 = styled.h3`
   font-weight: 600;
-  font-size: 2rem;
   line-height: 1;
-  margin-bottom: 1rem;
+  font-size: clamp(1rem, 5vw, 2rem);
 `;
 
 const StyledH1 = styled.h1`
-  font-size: 6rem;
-  font-weight: 600;
+  font-size: clamp(2rem, 10vw, 5rem);
   line-height: 1;
-  margin-bottom: 1rem;
+  font-weight: 600;
 `;
 
 const StyledH2 = styled.h2`
-  font-size: 4.5rem;
-  font-weight: 600;
   line-height: 1;
-  margin-bottom: 1rem;
-
+  font-size: clamp(1.25rem, 6vw, 3.5rem);
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.blueHighlight};
 `;
 
 const ButtonBox = styled.div`
   display: flex;
   gap: 2rem;
-  width: 60px;
+  width: 100%;
   height: 60px;
   a {
     position: relative;
@@ -90,18 +88,18 @@ const ButtonBox = styled.div`
 
 const ShowcaseSection = () => {
   return (
-    <SectionContainer noPadding>
+    <SectionContainer littlePadding>
       <ShowcaseWrapper>
         <TextContainer>
-          <SlideAndRevealContainer delay>
+          <PopupContainer>
             <StyledH3>Hey there, I&#39;m</StyledH3>
-          </SlideAndRevealContainer>
-          <SlideAndRevealContainer delay>
+          </PopupContainer>
+          <PopupContainer>
             <StyledH1>Mitchell Spaur</StyledH1>
-          </SlideAndRevealContainer>
-          <SlideAndRevealContainer delay>
+          </PopupContainer>
+          <PopupContainer>
             <StyledH2>A Fullstack Developer</StyledH2>
-          </SlideAndRevealContainer>
+          </PopupContainer>
         </TextContainer>
         <PopupContainer delay>
           <ButtonBox>

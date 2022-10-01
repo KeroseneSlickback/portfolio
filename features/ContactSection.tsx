@@ -25,11 +25,11 @@ const ContactBlockWrapper = styled.div`
   display: flex;
   width: 100%;
   gap: 1rem;
-  max-width: 500px;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 2rem;
   @media ${devices.tabletS} {
-    width: 75%;
+    gap: 4rem;
   }
 `;
 

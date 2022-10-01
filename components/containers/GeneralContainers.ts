@@ -3,7 +3,7 @@ import { devices } from "../../assets/styles/GlobalStyles";
 
 export const SectionContainer = styled.section<{
   styled?: boolean;
-  noPadding?: boolean;
+  littlePadding?: boolean;
 }>`
   display: flex;
   flex-direction: column;
@@ -20,9 +20,9 @@ export const SectionContainer = styled.section<{
       box-shadow: 0 0 0 1rem ${({ theme }) => theme.colors.backgroundHighlight};
     `}
   ${(props) =>
-    props.noPadding &&
+    props.littlePadding &&
     css`
-      padding: 0;
+      padding: 1rem 0;
     `}
   @media ${devices.tabletM} {
     width: 100%;
@@ -59,6 +59,7 @@ export const MajorityWrapper = styled.div`
   grid-template-rows: max-content max-content;
   gap: 2rem;
   justify-items: center;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
   @media ${devices.tabletM} {
     align-items: center;
     grid-template-columns: 1.5fr 1fr;
@@ -76,7 +77,8 @@ export const BlockWrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
   margin-top: 1rem;
   gap: 1.75rem;
+  padding: 0 1.5rem;
   @media ${devices.mobileL} {
-    width: 90%;
+    width: 100%;
   }
 `;

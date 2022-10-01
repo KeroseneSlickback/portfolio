@@ -15,9 +15,6 @@ const popup = keyframes`
 `;
 
 const PopupWrapper = styled.div<{ view?: boolean; delay?: boolean }>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   & > * {
     opacity: 0;
@@ -27,15 +24,15 @@ const PopupWrapper = styled.div<{ view?: boolean; delay?: boolean }>`
   ${(props) =>
     props.view &&
     css`
-      div {
+      > * {
         animation: 0.6s cubic-bezier(0.7, 1, 0.7, 1) forwards ${popup};
       }
     `}
   ${(props) =>
     props.delay &&
     css`
-      div {
-        animation-delay: 0.6s;
+      > * {
+        animation-delay: 2s;
       }
     `}
 `;
