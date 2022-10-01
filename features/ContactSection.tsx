@@ -6,9 +6,6 @@ import {
   SectionContainer,
   TopBottomWrapper,
 } from "../components/containers/GeneralContainers";
-import { HeadingSpan, HeadingWrapper } from "../components/HeadingComponents";
-import linkedin from "../assets/svgs/linkedin.svg";
-import email from "../assets/svgs/email.svg";
 import { devices } from "../assets/styles/GlobalStyles";
 import { StyledLinkedIn } from "../components/styledSvgs/StyledLinkedIn";
 import { StyledEmail } from "../components/styledSvgs/StyledEmail";

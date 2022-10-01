@@ -12,7 +12,6 @@ export const SectionContainer = styled.section<{
   margin: 1rem;
   padding: 3rem 0;
   gap: 2rem;
-  scroll-margin: 3rem;
   ${(props) =>
     props.styled &&
     css`
@@ -36,7 +35,7 @@ export const TopBottomWrapper = styled.div<{ wider?: boolean }>`
   justify-content: center;
   align-items: center;
   width: 100%;
-  scroll-margin-top: 20rem;
+  scroll-margin-top: 5.5rem;
 
   @media ${devices.tabletM} {
     scroll-margin: 0rem;

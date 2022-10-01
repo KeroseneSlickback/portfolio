@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css, keyframes } from "styled-components";
+import { devices } from "../assets/styles/GlobalStyles";
 import { SectionContainer } from "../components/containers/GeneralContainers";
 import { StyledChevron } from "../components/styledSvgs/StyledChevron";
 import PopupContainer from "./PopupContainer";
@@ -35,7 +36,9 @@ const ShowcaseWrapper = styled.div`
   align-items: flex-start;
   height: calc(100vh - 7.5rem);
   width: 100%;
-  padding: 1rem;
+  @media ${devices.tabletM} {
+    padding: 1rem;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -46,24 +49,26 @@ const TextContainer = styled.div`
   width: 100%;
   z-index: 2;
   gap: 1rem;
-  padding: 2rem;
+  @media ${devices.tabletM} {
+    padding: 2rem;
+  }
 `;
 
 const StyledH3 = styled.h3`
   font-weight: 600;
   line-height: 1;
-  font-size: clamp(1rem, 5vw, 2rem);
+  font-size: clamp(1.25rem, 5vw, 2rem);
 `;
 
 const StyledH1 = styled.h1`
-  font-size: clamp(2rem, 10vw, 5rem);
+  font-size: clamp(2.5rem, 10vw, 6rem);
   line-height: 1;
   font-weight: 600;
 `;
 
 const StyledH2 = styled.h2`
   line-height: 1;
-  font-size: clamp(1.25rem, 6vw, 3.5rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 600;
   color: ${({ theme }) => theme.colors.blueHighlight};
 `;
