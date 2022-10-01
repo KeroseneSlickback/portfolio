@@ -35,7 +35,7 @@ const PopupWrapper = styled.div<{ view?: boolean; delay?: boolean }>`
     props.delay &&
     css`
       div {
-        animation-delay: 0.4s;
+        animation-delay: 0.6s;
       }
     `}
 `;
@@ -47,7 +47,7 @@ interface Props {
 
 const PopupContainer = ({ children, delay }: Props) => {
   const [view, setView] = useState(false);
-  const { ref, inView } = useInView({ threshold: 0.33 });
+  const { ref, inView } = useInView({ threshold: 0.75 });
 
   useEffect(() => {
     if (inView) {

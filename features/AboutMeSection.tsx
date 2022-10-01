@@ -44,7 +44,7 @@ import selfphoto from "../public/images/selfphoto.jpg";
 
 const AboutMeSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer styled>
       <TopBottomWrapper id="about">
         <PopupContainer>
           <Heading

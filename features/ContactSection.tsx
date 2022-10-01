@@ -42,12 +42,12 @@ const ContactWrapper = styled.div`
   width: 110px;
   height: 110px;
   z-index: 2;
-  box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
-  background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+  box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundSecondary};
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
 
   a {
     height: 100%;
-    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
     width: 100%;
     text-decoration: none;
     display: flex;
@@ -106,7 +106,7 @@ const ContactWrapper = styled.div`
   }
 
   &:hover {
-    box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
+    box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundSecondary};
     &:after {
       width: 104%;
       height: 104%;
@@ -169,7 +169,7 @@ const ContactMessageWrapper = styled.div`
 
 const ContactSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer styled>
       <TopBottomWrapper id="contact">
         <PopupContainer>
           <Heading
