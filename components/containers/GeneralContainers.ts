@@ -36,7 +36,7 @@ export const TopBottomWrapper = styled.div<{ wider?: boolean }>`
   justify-content: center;
   align-items: center;
   width: 100%;
-  scroll-margin-top: 20rem;
+  scroll-margin-top: 5.5rem;
 
   @media ${devices.tabletM} {
     scroll-margin: 0rem;
