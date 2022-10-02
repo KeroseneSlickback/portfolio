@@ -6,9 +6,6 @@ import {
   SectionContainer,
   TopBottomWrapper,
 } from "../components/containers/GeneralContainers";
-import { HeadingSpan, HeadingWrapper } from "../components/HeadingComponents";
-import linkedin from "../assets/svgs/linkedin.svg";
-import email from "../assets/svgs/email.svg";
 import { devices } from "../assets/styles/GlobalStyles";
 import { StyledLinkedIn } from "../components/styledSvgs/StyledLinkedIn";
 import { StyledEmail } from "../components/styledSvgs/StyledEmail";
@@ -25,11 +22,11 @@ const ContactBlockWrapper = styled.div`
   display: flex;
   width: 100%;
   gap: 1rem;
-  max-width: 500px;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 2rem;
   @media ${devices.tabletS} {
-    width: 75%;
+    gap: 4rem;
   }
 `;
 
@@ -42,12 +39,12 @@ const ContactWrapper = styled.div`
   width: 110px;
   height: 110px;
   z-index: 2;
-  box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
-  background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+  box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundSecondary};
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
 
   a {
     height: 100%;
-    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
     width: 100%;
     text-decoration: none;
     display: flex;
@@ -84,11 +81,11 @@ const ContactWrapper = styled.div`
     transition: 0.2s;
     position: absolute;
     content: "";
-    bottom: -2%;
-    right: -2%;
+    bottom: -1%;
+    right: -1%;
     background: ${({ theme }) => theme.colors.greenHighlight};
-    width: 75%;
-    height: 75%;
+    width: 25%;
+    height: 25%;
     z-index: -1;
   }
 
@@ -97,23 +94,23 @@ const ContactWrapper = styled.div`
     transition: 0.2s;
     position: absolute;
     content: "";
-    top: -2%;
-    left: -2%;
+    top: -1%;
+    left: -1%;
     background: ${({ theme }) => theme.colors.greenHighlight};
-    width: 75%;
-    height: 75%;
+    width: 25%;
+    height: 25%;
     z-index: -1;
   }
 
   &:hover {
-    box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
+    box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundSecondary};
     &:after {
-      width: 104%;
-      height: 104%;
+      width: 102%;
+      height: 102%;
     }
     &:before {
-      width: 104%;
-      height: 104%;
+      width: 102%;
+      height: 102%;
     }
   }
 
@@ -169,7 +166,7 @@ const ContactMessageWrapper = styled.div`
 
 const ContactSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer styled>
       <TopBottomWrapper id="contact">
         <PopupContainer>
           <Heading

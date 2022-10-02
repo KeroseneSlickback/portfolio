@@ -1,164 +1,157 @@
-import React, { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import React from "react";
 import styled, { css, keyframes } from "styled-components";
 import { devices } from "../assets/styles/GlobalStyles";
-import { LargeButton, LargeLink } from "../components/buttons/Buttons";
 import { SectionContainer } from "../components/containers/GeneralContainers";
-import { useFindWindowSize } from "../hooks/useFindWindowSize";
+import { StyledChevron } from "../components/styledSvgs/StyledChevron";
+import { StyledDown } from "../components/styledSvgs/StyledDown";
 import PopupContainer from "./PopupContainer";
+import ShowcaseTransition from "./ShowcaseTransition";
 
-const animationSpeed = 333;
-
-const grow = keyframes`
+const bounce = keyframes`
   0% {
-    height: 99%;
-    opacity: 0.1;
+    transform: translateY(0%);
   }
   50% {
-    height: 100%;
-    opacity: 0.5;
+    transform: translateY(10%);
   }
   100% {
-    height: 99%;
-    opacity: 0.1;
+    transform: translateY(0%);
   }
 `;
 
-const riseUp = keyframes`
-  from {
-    transform: translateY(100%);
+const float = keyframes`
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
   }
-  to {
-    transform: translateY(0);
-  }
+
 `;
 
 const ShowcaseWrapper = styled.div`
   position: relative;
   display: flex;
-  overflow: hidden;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 0.25rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   height: calc(100vh - 7.5rem);
   width: 100%;
-  padding: 1rem;
+  @media ${devices.tabletM} {
+    padding: 1rem;
+  }
 `;
 
 const TextContainer = styled.div`
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  gap: 1rem;
+  text-shadow: rgb(23, 8, 47) 1px 1px 1px, rgb(23, 8, 47) -1px -1px 1px,
+    rgb(23, 8, 47) -1px 1px 1px, rgb(23, 8, 47) 1px -1px 1px;
+  @media ${devices.tabletM} {
+    padding: 2rem;
+  }
+`;
+
+const StyledH3 = styled.h3`
+  font-weight: 600;
+  line-height: 1;
+  font-size: clamp(1rem, 5vw, 2rem);
+`;
+
+const StyledH1 = styled.h1`
+  font-size: clamp(2rem, 10vw, 6rem);
+  line-height: 1;
+  font-weight: 600;
+`;
+
+const StyledH2 = styled.h2`
+  line-height: 1;
+  font-size: clamp(1.5rem, 6vw, 4rem);
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.blueHighlight};
+`;
+
+const ButtonBox = styled.div`
+  bottom: 3rem;
+  left: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 1rem;
+  a {
+    div {
+      svg {
+        stroke: ${({ theme }) => theme.colors.greenHighlight};
+        animation: ${bounce} 1.5s cubic-bezier(0.25, 1, 0.25, 1) infinite;
+      }
+    }
+  }
+`;
+
+const AnimationBox = styled.div`
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 2;
-  padding: 1rem 0rem;
-`;
-
-const GrowingSpan = styled.span`
-  display: block;
-  height: 99%;
-  width: 10%;
-  border-radius: 0.125rem;
-  background: ${({ theme }) => theme.colors.greenHighlight};
-  opacity: 0.1;
-  animation: 3s cubic-bezier(0.1, 0, 0.9, 1) infinite ${grow};
-
-  &:nth-child(1) {
-    animation-delay: ${animationSpeed * 0.5}ms;
-  }
-  &:nth-child(2) {
-    animation-delay: ${animationSpeed * 1}ms;
-  }
-  &:nth-child(3) {
-    animation-delay: ${animationSpeed * 1.5}ms;
-  }
-  &:nth-child(4) {
-    animation-delay: ${animationSpeed * 2}ms;
-  }
-  &:nth-child(5) {
-    animation-delay: ${animationSpeed * 2.5}ms;
-  }
-  &:nth-child(6) {
-    animation-delay: ${animationSpeed * 3}ms;
-  }
-  &:nth-child(7) {
-    animation-delay: ${animationSpeed * 3.5}ms;
-  }
-  &:nth-child(8) {
-    animation-delay: ${animationSpeed * 4}ms;
-  }
-  &:nth-child(9) {
-    animation-delay: ${animationSpeed * 4.5}ms;
-  }
-  &:nth-child(10) {
-    animation-delay: ${animationSpeed * 5}ms;
-  }
-  &:nth-child(11) {
-    animation-delay: ${animationSpeed * 5.5}ms;
-  }
-  &:nth-child(12) {
-    animation-delay: ${animationSpeed * 6}ms;
-  }
-  &:nth-child(13) {
-    animation-delay: ${animationSpeed * 6.5}ms;
-  }
-  &:nth-child(14) {
-    animation-delay: ${animationSpeed * 7}ms;
-  }
-  &:nth-child(15) {
-    animation-delay: ${animationSpeed * 7.5}ms;
-  }
-  &:nth-child(16) {
-    animation-delay: ${animationSpeed * 8}ms;
-  }
-`;
-
-const StyledHeading = styled.h1`
-  display: flex;
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const HiddenSpanWrapper = styled.span`
-  width: 100%;
-  display: flex;
   overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  z-index: -1;
+  div {
+    position: absolute;
+    animation: ${float} 6s linear infinite;
 
-  @media ${devices.mobileM} {
     &:nth-child(1) {
-      margin-left: -20%;
+      top: 15%;
+      left: 30%;
+      svg {
+        stroke: ${({ theme }) => theme.colors.greenHighlight};
+      }
+      animation-duration: 18s;
+      animation-delay: -12s;
+      transform-origin: 20vw 10vh;
     }
     &:nth-child(2) {
-      margin-left: -10%;
+      top: 10%;
+      left: 66%;
+      svg {
+        stroke: ${({ theme }) => theme.colors.greenHighlight};
+      }
+      animation-duration: 17s;
+      animation-delay: -1s;
+      transform-origin: 15vw 15vh;
+    }
+    &:nth-child(3) {
+      top: 70%;
+      left: 60%;
+      svg {
+        stroke: ${({ theme }) => theme.colors.textPrimary};
+      }
+      animation-duration: 20s;
+      animation-delay: -22s;
+      transform-origin: 15vw 10vh;
     }
     &:nth-child(4) {
+      top: 85%;
+      left: 25%;
+      svg {
+        stroke: ${({ theme }) => theme.colors.textPrimary};
+      }
+      animation-duration: 14s;
+      animation-delay: -8s;
+      transform-origin: 15vw 10vh;
     }
     &:nth-child(5) {
-      margin-left: 10%;
-    }
-  }
-  @media ${devices.tabletL} {
-    &:nth-child(1) {
-      margin-left: -30%;
-    }
-    &:nth-child(2) {
-      margin-left: -15%;
-    }
-    &:nth-child(4) {
-      margin-left: 10%;
-    }
-    &:nth-child(5) {
-      margin-left: 30%;
+      top: 35%;
+      left: 60%;
+      svg {
+        stroke: ${({ theme }) => theme.colors.blueHighlight};
+      }
+      animation-duration: 12s;
+      animation-delay: -16s;
+      transform-origin: 15vw 10vh;
     }
   }
 `;
@@ -166,9 +159,6 @@ const HiddenSpanWrapper = styled.span`
 const TitleSpan = styled.span<{ secondary?: boolean }>`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), -2px -2px 4px rgba(0, 0, 0, 1),
     -2px 2px 4px rgba(0, 0, 0, 1), 2px -2px 4px rgba(0, 0, 0, 1);
-  transform: translateY(-100%);
-  animation: 1s ${riseUp} ease-in-out forwards;
-  font-size: 8vh;
   font-weight: 600;
 
   ${(props) =>
@@ -187,62 +177,37 @@ const TitleSpan = styled.span<{ secondary?: boolean }>`
   }
 `;
 
-const ButtonBox = styled.div`
-  display: flex;
-  gap: 2rem;
-  margin: 1rem 0rem;
-`;
-
 const ShowcaseSection = () => {
   return (
-    <SectionContainer styled noPadding>
+    <SectionContainer littlePadding>
       <ShowcaseWrapper>
         <TextContainer>
-          <StyledHeading>
-            <HiddenSpanWrapper>
-              <TitleSpan>Mitchell</TitleSpan>
-            </HiddenSpanWrapper>
-            <HiddenSpanWrapper>
-              <TitleSpan>William</TitleSpan>
-            </HiddenSpanWrapper>
-            <HiddenSpanWrapper>
-              <TitleSpan>Spaur</TitleSpan>
-            </HiddenSpanWrapper>
-            <HiddenSpanWrapper>
-              <TitleSpan secondary>Fullstack</TitleSpan>
-            </HiddenSpanWrapper>
-            <HiddenSpanWrapper>
-              <TitleSpan secondary>Developer</TitleSpan>
-            </HiddenSpanWrapper>
-            <PopupContainer delay>
-              <ButtonBox>
-                <a href="#about">
-                  <LargeLink shadow green>
-                    About Me
-                  </LargeLink>
-                </a>
-                <a href="#contact">
-                  <LargeLink shadow>Contact</LargeLink>
-                </a>
-              </ButtonBox>
-            </PopupContainer>
-          </StyledHeading>
+          <PopupContainer>
+            <StyledH3>Hey there, I&#39;m</StyledH3>
+          </PopupContainer>
+          <PopupContainer>
+            <StyledH1>Mitchell Spaur</StyledH1>
+          </PopupContainer>
+          <PopupContainer>
+            <StyledH2>A Fullstack Developer</StyledH2>
+          </PopupContainer>
         </TextContainer>
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
-        <GrowingSpan />
+        <PopupContainer delay>
+          <ButtonBox>
+            <a href="#about">
+              <StyledDown />
+            </a>
+          </ButtonBox>
+        </PopupContainer>
+        <PopupContainer delay>
+          <AnimationBox>
+            <StyledChevron height="35px" width="35px" />
+            <StyledChevron height="55px" width="55px" />
+            <StyledChevron height="30px" width="30px" />
+            <StyledChevron height="25px" width="25px" />
+            <StyledChevron height="45px" width="45px" />
+          </AnimationBox>
+        </PopupContainer>
       </ShowcaseWrapper>
     </SectionContainer>
   );

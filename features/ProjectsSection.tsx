@@ -17,7 +17,7 @@ import Yambo from "../public/images/Yambo.png";
 
 const ProjectsSection = () => {
   return (
-    <SectionContainer styled>
+    <SectionContainer>
       <TopBottomWrapper wider id="projects">
         <PopupContainer>
           <Heading

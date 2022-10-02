@@ -60,7 +60,7 @@ export const HeadingSpan = styled.span<{
     props.left &&
     css`
       &:before {
-        left: 0;
+        left: 4;
       }
       &:after {
         left: 0;

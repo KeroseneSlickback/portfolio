@@ -10,8 +10,8 @@ const ImageWrap = styled.span`
   width: fit-content;
   height: fit-content;
   margin: 0 0.75rem;
-  box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
-  background: ${({ theme }) => theme.colors.backgroundPrimary};
+  box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundSecondary};
+  background: ${({ theme }) => theme.colors.backgroundSecondary};
 
   & > span {
   }
@@ -40,7 +40,7 @@ const ImageWrap = styled.span`
     z-index: -1;
   }
   &:hover {
-    box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundPrimary};
+    box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundSecondary};
     &:after {
       width: 108%;
       height: 108%;
