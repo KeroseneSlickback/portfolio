@@ -94,14 +94,6 @@ const ButtonBox = styled.div`
   }
 `;
 
-const animationDuration = 6;
-
-const random1 = Math.floor(Math.random() * 20) + 0;
-const random2 = Math.floor(Math.random() * 20) + 1;
-const random3 = Math.floor(Math.random() * 20) + 1;
-const random4 = Math.floor(Math.random() * 20) + 1;
-const random5 = Math.floor(Math.random() * 20) + 1;
-
 const AnimationBox = styled.div`
   position: relative;
   top: 0;
@@ -115,22 +107,24 @@ const AnimationBox = styled.div`
 
     &:nth-child(1) {
       top: 0%;
-      left: 50%;
+      left: 40%;
       svg {
         stroke: red;
+        stroke: ${({ theme }) => theme.colors.greenHighlight};
       }
       animation-duration: 17s;
       animation-delay: -9s;
-      transform-origin: 4vw 17vh;
+      transform-origin: 4vw 25vh;
     }
     &:nth-child(2) {
-      top: 20%;
+      top: 50%;
       left: 66%;
       svg {
         stroke: green;
+        stroke: ${({ theme }) => theme.colors.greenHighlight};
       }
-      animation-duration: 12.8s;
-      animation-delay: -9.9s;
+      animation-duration: 12s;
+      animation-delay: -10s;
       transform-origin: 13vw 12vh;
     }
     &:nth-child(3) {
@@ -138,29 +132,32 @@ const AnimationBox = styled.div`
       left: 35%;
       svg {
         stroke: pink;
+        stroke: ${({ theme }) => theme.colors.textPrimary};
       }
-      animation-duration: 13.2s;
-      animation-delay: -11.2s;
+      animation-duration: 14s;
+      animation-delay: -12s;
       transform-origin: 12vw 7vh;
     }
     &:nth-child(4) {
-      top: 54%;
+      top: 34%;
       left: 66%;
       svg {
         stroke: yellow;
+        stroke: ${({ theme }) => theme.colors.textPrimary};
       }
-      animation-duration: 5.6s;
-      animation-delay: -11.9s;
+      animation-duration: 5s;
+      animation-delay: -12s;
       transform-origin: 7vw 7vh;
     }
     &:nth-child(5) {
-      top: 18%;
+      top: 10%;
       left: 75%;
       svg {
         stroke: blue;
+        stroke: ${({ theme }) => theme.colors.blueHighlight};
       }
-      animation-duration: 15.8s;
-      animation-delay: -15.8s;
+      animation-duration: 6s;
+      animation-delay: -16s;
       transform-origin: 9vw 16vh;
     }
   }
@@ -189,11 +186,11 @@ const ShowcaseSection = () => {
           </ButtonBox>
         </PopupContainer>
         <AnimationBox>
+          <StyledChevron height="15px" width="15px" />
+          <StyledChevron height="65px" width="65px" />
+          <StyledChevron height="30px" width="30px" />
           <StyledChevron height="25px" width="25px" />
-          <StyledChevron height="50px" width="50px" />
-          <StyledChevron height="35px" width="35px" />
-          <StyledChevron height="25px" width="25px" />
-          <StyledChevron height="20px" width="20px" />
+          <StyledChevron height="45px" width="45px" />
         </AnimationBox>
       </ShowcaseWrapper>
     </SectionContainer>
