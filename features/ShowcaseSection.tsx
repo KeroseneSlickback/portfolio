@@ -18,18 +18,15 @@ const bounce = keyframes`
   }
 `;
 
-const wordFlip = keyframes`
-  0% {margin-top:-270px;}
-  5% {margin-top:-180px;}
-  33% {margin-top:-180px;}
-  38% {margin-top:-90px;}
-  66% {margin-top:-90px;}
-  71% {margin-top:0px;}
-  99.99% {margin-top:0px;}
-  100% {margin-top:-270px;}
+const float = keyframes`
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(-360deg);
+  }
+
 `;
 
 const ShowcaseWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,6 +39,9 @@ const ShowcaseWrapper = styled.div`
 `;
 
 const TextContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,6 +74,9 @@ const StyledH2 = styled.h2`
 `;
 
 const ButtonBox = styled.div`
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
   display: flex;
   gap: 2rem;
   width: 100%;
@@ -87,6 +90,78 @@ const ButtonBox = styled.div`
         stroke: ${({ theme }) => theme.colors.greenHighlight};
         animation: ${bounce} 1.5s cubic-bezier(0.25, 1, 0.25, 1) infinite;
       }
+    }
+  }
+`;
+
+const animationDuration = 6;
+
+const random1 = Math.floor(Math.random() * 20) + 0;
+const random2 = Math.floor(Math.random() * 20) + 1;
+const random3 = Math.floor(Math.random() * 20) + 1;
+const random4 = Math.floor(Math.random() * 20) + 1;
+const random5 = Math.floor(Math.random() * 20) + 1;
+
+const AnimationBox = styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  div {
+    position: absolute;
+    animation: ${float} 6s linear infinite;
+
+    &:nth-child(1) {
+      top: 0%;
+      left: 50%;
+      svg {
+        stroke: red;
+      }
+      animation-duration: 17s;
+      animation-delay: -9s;
+      transform-origin: 4vw 17vh;
+    }
+    &:nth-child(2) {
+      top: 20%;
+      left: 66%;
+      svg {
+        stroke: green;
+      }
+      animation-duration: 12.8s;
+      animation-delay: -9.9s;
+      transform-origin: 13vw 12vh;
+    }
+    &:nth-child(3) {
+      top: 50%;
+      left: 35%;
+      svg {
+        stroke: pink;
+      }
+      animation-duration: 13.2s;
+      animation-delay: -11.2s;
+      transform-origin: 12vw 7vh;
+    }
+    &:nth-child(4) {
+      top: 54%;
+      left: 66%;
+      svg {
+        stroke: yellow;
+      }
+      animation-duration: 5.6s;
+      animation-delay: -11.9s;
+      transform-origin: 7vw 7vh;
+    }
+    &:nth-child(5) {
+      top: 18%;
+      left: 75%;
+      svg {
+        stroke: blue;
+      }
+      animation-duration: 15.8s;
+      animation-delay: -15.8s;
+      transform-origin: 9vw 16vh;
     }
   }
 `;
@@ -113,6 +188,13 @@ const ShowcaseSection = () => {
             </a>
           </ButtonBox>
         </PopupContainer>
+        <AnimationBox>
+          <StyledChevron height="25px" width="25px" />
+          <StyledChevron height="50px" width="50px" />
+          <StyledChevron height="35px" width="35px" />
+          <StyledChevron height="25px" width="25px" />
+          <StyledChevron height="20px" width="20px" />
+        </AnimationBox>
       </ShowcaseWrapper>
     </SectionContainer>
   );
