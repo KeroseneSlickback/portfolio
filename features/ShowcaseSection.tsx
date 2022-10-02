@@ -159,8 +159,8 @@ const AnimationBox = styled.div`
       svg {
         stroke: ${({ theme }) => theme.colors.blueHighlight};
       }
-      animation-duration: 12s;
-      animation-delay: -16s;
+      animation-duration: 14s;
+      animation-delay: -12s;
       transform-origin: 10vw 8vh;
     }
   }
