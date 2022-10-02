@@ -81,11 +81,11 @@ const ContactWrapper = styled.div`
     transition: 0.2s;
     position: absolute;
     content: "";
-    bottom: -2%;
-    right: -2%;
+    bottom: -1%;
+    right: -1%;
     background: ${({ theme }) => theme.colors.greenHighlight};
-    width: 75%;
-    height: 75%;
+    width: 25%;
+    height: 25%;
     z-index: -1;
   }
 
@@ -94,23 +94,23 @@ const ContactWrapper = styled.div`
     transition: 0.2s;
     position: absolute;
     content: "";
-    top: -2%;
-    left: -2%;
+    top: -1%;
+    left: -1%;
     background: ${({ theme }) => theme.colors.greenHighlight};
-    width: 75%;
-    height: 75%;
+    width: 25%;
+    height: 25%;
     z-index: -1;
   }
 
   &:hover {
     box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.backgroundSecondary};
     &:after {
-      width: 104%;
-      height: 104%;
+      width: 102%;
+      height: 102%;
     }
     &:before {
-      width: 104%;
-      height: 104%;
+      width: 102%;
+      height: 102%;
     }
   }
 

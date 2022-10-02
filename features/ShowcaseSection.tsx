@@ -3,6 +3,7 @@ import styled, { css, keyframes } from "styled-components";
 import { devices } from "../assets/styles/GlobalStyles";
 import { SectionContainer } from "../components/containers/GeneralContainers";
 import { StyledChevron } from "../components/styledSvgs/StyledChevron";
+import { StyledDown } from "../components/styledSvgs/StyledDown";
 import PopupContainer from "./PopupContainer";
 import ShowcaseTransition from "./ShowcaseTransition";
 
@@ -20,7 +21,7 @@ const bounce = keyframes`
 
 const float = keyframes`
   100% {
-    transform: translate3d(0, 0, 1px) rotate(-360deg);
+    transform: translate3d(0, 0, 1px) rotate(360deg);
   }
 
 `;
@@ -39,9 +40,6 @@ const ShowcaseWrapper = styled.div`
 `;
 
 const TextContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +47,8 @@ const TextContainer = styled.div`
   width: 100%;
   z-index: 2;
   gap: 1rem;
+  text-shadow: rgb(23, 8, 47) 1px 1px 1px, rgb(23, 8, 47) -1px -1px 1px,
+    rgb(23, 8, 47) -1px 1px 1px, rgb(23, 8, 47) 1px -1px 1px;
   @media ${devices.tabletM} {
     padding: 2rem;
   }
@@ -57,34 +57,31 @@ const TextContainer = styled.div`
 const StyledH3 = styled.h3`
   font-weight: 600;
   line-height: 1;
-  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-size: clamp(1rem, 5vw, 2rem);
 `;
 
 const StyledH1 = styled.h1`
-  font-size: clamp(2.5rem, 10vw, 6rem);
+  font-size: clamp(2rem, 10vw, 6rem);
   line-height: 1;
   font-weight: 600;
 `;
 
 const StyledH2 = styled.h2`
   line-height: 1;
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: clamp(1.5rem, 6vw, 4rem);
   font-weight: 600;
   color: ${({ theme }) => theme.colors.blueHighlight};
 `;
 
 const ButtonBox = styled.div`
-  position: absolute;
   bottom: 3rem;
   left: 0;
   display: flex;
-  gap: 2rem;
+  justify-content: center;
   width: 100%;
   height: 60px;
+  margin-bottom: 1rem;
   a {
-    position: relative;
-    width: 100%;
-    height: 100%;
     div {
       svg {
         stroke: ${({ theme }) => theme.colors.greenHighlight};
@@ -95,68 +92,64 @@ const ButtonBox = styled.div`
 `;
 
 const AnimationBox = styled.div`
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
+  z-index: -1;
   div {
     position: absolute;
     animation: ${float} 6s linear infinite;
 
     &:nth-child(1) {
-      top: 0%;
+      top: 15%;
       left: 40%;
       svg {
-        stroke: red;
         stroke: ${({ theme }) => theme.colors.greenHighlight};
       }
       animation-duration: 17s;
-      animation-delay: -9s;
-      transform-origin: 4vw 25vh;
+      animation-delay: -12s;
+      transform-origin: 14vw 14vh;
     }
     &:nth-child(2) {
       top: 50%;
       left: 66%;
       svg {
-        stroke: green;
         stroke: ${({ theme }) => theme.colors.greenHighlight};
       }
-      animation-duration: 12s;
+      animation-duration: 14s;
       animation-delay: -10s;
       transform-origin: 13vw 12vh;
     }
     &:nth-child(3) {
-      top: 50%;
-      left: 35%;
+      top: 60%;
+      left: 55%;
       svg {
-        stroke: pink;
         stroke: ${({ theme }) => theme.colors.textPrimary};
       }
-      animation-duration: 14s;
-      animation-delay: -12s;
+      animation-duration: 16s;
+      animation-delay: -22s;
       transform-origin: 12vw 7vh;
     }
     &:nth-child(4) {
-      top: 34%;
-      left: 66%;
+      top: 25%;
+      left: 60%;
       svg {
-        stroke: yellow;
         stroke: ${({ theme }) => theme.colors.textPrimary};
       }
-      animation-duration: 5s;
-      animation-delay: -12s;
-      transform-origin: 7vw 7vh;
+      animation-duration: 15s;
+      animation-delay: -8s;
+      transform-origin: 15vw 15vh;
     }
     &:nth-child(5) {
-      top: 10%;
+      top: 5%;
       left: 75%;
       svg {
-        stroke: blue;
         stroke: ${({ theme }) => theme.colors.blueHighlight};
       }
-      animation-duration: 6s;
+      animation-duration: 9s;
       animation-delay: -16s;
       transform-origin: 9vw 16vh;
     }
@@ -181,13 +174,13 @@ const ShowcaseSection = () => {
         <PopupContainer delay>
           <ButtonBox>
             <a href="#about">
-              <StyledChevron />
+              <StyledDown />
             </a>
           </ButtonBox>
         </PopupContainer>
         <AnimationBox>
-          <StyledChevron height="15px" width="15px" />
-          <StyledChevron height="65px" width="65px" />
+          <StyledChevron height="35px" width="35px" />
+          <StyledChevron height="55px" width="55px" />
           <StyledChevron height="30px" width="30px" />
           <StyledChevron height="25px" width="25px" />
           <StyledChevron height="45px" width="45px" />

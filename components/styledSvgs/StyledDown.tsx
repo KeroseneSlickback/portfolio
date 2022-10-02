@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 interface SVGProps {
   height?: string;
@@ -17,7 +17,7 @@ const SvgContainer = styled.div<SVGProps>`
   }
 `;
 
-export const StyledChevron: React.FC<SVGProps> = (props) => (
+export const StyledDown: React.FC<SVGProps> = (props) => (
   <SvgContainer {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ export const StyledChevron: React.FC<SVGProps> = (props) => (
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
-        d="M4.5 15.75l7.5-7.5 7.5 7.5"
+        d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
       />
     </svg>
   </SvgContainer>

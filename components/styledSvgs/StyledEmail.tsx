@@ -28,17 +28,18 @@ export const StyledEmail: React.FC<SVGProps> = (props) => (
   <SvgContainer {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      stroke="currentColor"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     >
-      <path
-        xmlns="http://www.w3.org/2000/svg"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M16 20.064A9 9 0 1121 12v1.5a2.5 2.5 0 01-5 0V8m0 4a4 4 0 11-8 0 4 4 0 018 0z"
-      />
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+      <polyline points="3 7 12 13 21 7"></polyline>
     </svg>
   </SvgContainer>
 );
