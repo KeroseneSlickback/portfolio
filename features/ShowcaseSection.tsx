@@ -153,27 +153,16 @@ const AnimationBox = styled.div`
       animation-delay: -16s;
       transform-origin: 15vw 10vh;
     }
-  }
-`;
-
-const TitleSpan = styled.span<{ secondary?: boolean }>`
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), -2px -2px 4px rgba(0, 0, 0, 1),
-    -2px 2px 4px rgba(0, 0, 0, 1), 2px -2px 4px rgba(0, 0, 0, 1);
-  font-weight: 600;
-
-  ${(props) =>
-    props.secondary &&
-    css`
-      color: ${({ theme }) => theme.colors.blueHighlight};
-    `}
-  @media ${devices.mobileL} {
-    font-size: 9vh;
-  }
-  @media ${devices.tabletS} {
-    font-size: 10vh;
-  }
-  @media ${devices.tabletM} {
-    font-size: 11vh;
+    &:nth-child(6) {
+      top: 5%;
+      left: 30%;
+      svg {
+        stroke: ${({ theme }) => theme.colors.blueHighlight};
+      }
+      animation-duration: 12s;
+      animation-delay: -16s;
+      transform-origin: 10vw 8vh;
+    }
   }
 `;
 
@@ -206,6 +195,7 @@ const ShowcaseSection = () => {
             <StyledChevron height="30px" width="30px" />
             <StyledChevron height="25px" width="25px" />
             <StyledChevron height="45px" width="45px" />
+            <StyledChevron height="30px" width="30px" />
           </AnimationBox>
         </PopupContainer>
       </ShowcaseWrapper>
