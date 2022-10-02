@@ -104,54 +104,54 @@ const AnimationBox = styled.div`
     animation: ${float} 6s linear infinite;
 
     &:nth-child(1) {
-      top: 25%;
-      left: 40%;
+      top: 15%;
+      left: 30%;
       svg {
         stroke: ${({ theme }) => theme.colors.greenHighlight};
       }
-      animation-duration: 12s;
+      animation-duration: 18s;
       animation-delay: -12s;
-      transform-origin: 15vw 10vh;
+      transform-origin: 20vw 10vh;
     }
     &:nth-child(2) {
-      top: 30%;
-      left: 46%;
+      top: 10%;
+      left: 66%;
       svg {
         stroke: ${({ theme }) => theme.colors.greenHighlight};
       }
-      animation-duration: 10s;
-      animation-delay: -10s;
-      transform-origin: 19vw 19vh;
+      animation-duration: 17s;
+      animation-delay: -1s;
+      transform-origin: 15vw 15vh;
     }
     &:nth-child(3) {
-      top: 50%;
+      top: 70%;
       left: 60%;
       svg {
         stroke: ${({ theme }) => theme.colors.textPrimary};
       }
       animation-duration: 20s;
       animation-delay: -22s;
-      transform-origin: 15vw 5vh;
+      transform-origin: 15vw 10vh;
     }
     &:nth-child(4) {
-      top: 45%;
+      top: 85%;
       left: 25%;
       svg {
         stroke: ${({ theme }) => theme.colors.textPrimary};
       }
-      animation-duration: 20s;
+      animation-duration: 14s;
       animation-delay: -8s;
-      transform-origin: 15vw 5vh;
+      transform-origin: 15vw 10vh;
     }
     &:nth-child(5) {
-      top: 20%;
+      top: 35%;
       left: 60%;
       svg {
         stroke: ${({ theme }) => theme.colors.blueHighlight};
       }
-      animation-duration: 15s;
+      animation-duration: 12s;
       animation-delay: -16s;
-      transform-origin: 13vw 10vh;
+      transform-origin: 15vw 10vh;
     }
   }
 `;
