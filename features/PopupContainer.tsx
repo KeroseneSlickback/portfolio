@@ -32,7 +32,7 @@ const PopupWrapper = styled.div<{ view?: boolean; delay?: boolean }>`
     props.delay &&
     css`
       > * {
-        animation-delay: 2s;
+        animation-delay: 1s;
       }
     `}
 `;

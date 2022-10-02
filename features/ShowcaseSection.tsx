@@ -178,13 +178,15 @@ const ShowcaseSection = () => {
             </a>
           </ButtonBox>
         </PopupContainer>
-        <AnimationBox>
-          <StyledChevron height="35px" width="35px" />
-          <StyledChevron height="55px" width="55px" />
-          <StyledChevron height="30px" width="30px" />
-          <StyledChevron height="25px" width="25px" />
-          <StyledChevron height="45px" width="45px" />
-        </AnimationBox>
+        <PopupContainer delay>
+          <AnimationBox>
+            <StyledChevron height="35px" width="35px" />
+            <StyledChevron height="55px" width="55px" />
+            <StyledChevron height="30px" width="30px" />
+            <StyledChevron height="25px" width="25px" />
+            <StyledChevron height="45px" width="45px" />
+          </AnimationBox>
+        </PopupContainer>
       </ShowcaseWrapper>
     </SectionContainer>
   );
