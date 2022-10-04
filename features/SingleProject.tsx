@@ -70,7 +70,7 @@ const SingleProject = ({ alternative, project, photo }: Props) => {
     <PopupProjectWrapper alternative={alternative} ref={ref} view={view}>
       <ProjectImageWrapper alternative={alternative}>
         <div>
-          <Image src={photo} alt="project" />
+          <Image src={photo} alt="project" priority={true} />
         </div>
       </ProjectImageWrapper>
       <ProjectExplainWrapper alternative={alternative}>

@@ -63,6 +63,7 @@ const ImageComponent = ({ alt, src, height, width }) => {
         quality={70}
         height={height}
         width={width}
+        priority={true}
       />
     </ImageWrap>
   );
