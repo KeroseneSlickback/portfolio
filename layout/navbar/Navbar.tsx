@@ -419,7 +419,12 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#" onClick={toggleMobileNavBar}>
+              <a
+                href="https://drive.google.com/file/d/1RNZNPFnoXIUxD73CWKZ_a06Air6d5m-j/view?usp=sharing"
+                rel="noreferrer"
+                target="_blank"
+                onClick={toggleMobileNavBar}
+              >
                 Resume
               </a>
             </li>
