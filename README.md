@@ -17,7 +17,7 @@ A refined portfolio with my personal favorite styling cues, incorporating techno
 ### Features
 
 - NextJS has amazing scalability with it's intergrating routing and combined API handling which will allow my portfolio to expand and evolve.
-- Style-Components offers the ability for diverse theming and great flexibility in usable styled components across the entire app.
+- Styled-Components offers the ability for diverse theming and great flexibility in usable styled components across the entire app.
 
 ### Challenges Faced
 
