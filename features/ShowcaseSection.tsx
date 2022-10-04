@@ -105,63 +105,100 @@ const AnimationBox = styled.div`
 
     &:nth-child(1) {
       top: 15%;
-      left: 30%;
+      left: 20%;
       svg {
         stroke: ${({ theme }) => theme.colors.greenHighlight};
       }
       animation-duration: 18s;
       animation-delay: -12s;
-      transform-origin: 20vw 10vh;
+      transform-origin: 40vw 10vh;
     }
     &:nth-child(2) {
       top: 10%;
-      left: 66%;
+      left: 56%;
       svg {
         stroke: ${({ theme }) => theme.colors.greenHighlight};
       }
       animation-duration: 17s;
       animation-delay: -1s;
-      transform-origin: 15vw 15vh;
+      transform-origin: 30vw 15vh;
     }
     &:nth-child(3) {
       top: 70%;
-      left: 60%;
+      left: 50%;
       svg {
         stroke: ${({ theme }) => theme.colors.textPrimary};
       }
       animation-duration: 20s;
       animation-delay: -22s;
-      transform-origin: 15vw 10vh;
+      transform-origin: 30vw 10vh;
     }
     &:nth-child(4) {
       top: 85%;
-      left: 25%;
+      left: 15%;
       svg {
         stroke: ${({ theme }) => theme.colors.textPrimary};
       }
       animation-duration: 14s;
       animation-delay: -8s;
-      transform-origin: 15vw 10vh;
+      transform-origin: 30vw 10vh;
     }
     &:nth-child(5) {
       top: 35%;
-      left: 60%;
+      left: 50%;
       svg {
         stroke: ${({ theme }) => theme.colors.blueHighlight};
       }
       animation-duration: 12s;
       animation-delay: -16s;
-      transform-origin: 15vw 10vh;
+      transform-origin: 30vw 10vh;
     }
     &:nth-child(6) {
       top: 5%;
-      left: 30%;
+      left: 20%;
       svg {
         stroke: ${({ theme }) => theme.colors.blueHighlight};
       }
       animation-duration: 14s;
       animation-delay: -12s;
-      transform-origin: 10vw 8vh;
+      transform-origin: 20vw 8vh;
+    }
+
+    @media ${devices.tabletM} {
+      &:nth-child(1) {
+        top: 15%;
+        left: 30%;
+        transform-origin: 20vw 10vh;
+      }
+      &:nth-child(2) {
+        top: 10%;
+        left: 66%;
+        transform-origin: 15vw 15vh;
+      }
+      &:nth-child(3) {
+        top: 70%;
+        left: 60%;
+        animation-delay: -22s;
+        transform-origin: 15vw 10vh;
+      }
+      &:nth-child(4) {
+        top: 85%;
+        left: 25%;
+        animation-delay: -8s;
+        transform-origin: 15vw 10vh;
+      }
+      &:nth-child(5) {
+        top: 35%;
+        left: 60%;
+        animation-delay: -16s;
+        transform-origin: 15vw 10vh;
+      }
+      &:nth-child(6) {
+        top: 5%;
+        left: 30%;
+        animation-delay: -12s;
+        transform-origin: 10vw 8vh;
+      }
     }
   }
 `;
