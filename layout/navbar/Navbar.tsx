@@ -420,7 +420,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="https://drive.google.com/file/d/1RNZNPFnoXIUxD73CWKZ_a06Air6d5m-j/view?usp=sharing"
+                href="https://drive.google.com/file/d/12L6nJ6_VKCr9UUwHDePl_Vnthny-vhBr/view?usp=sharing"
                 rel="noreferrer"
                 target="_blank"
                 onClick={toggleMobileNavBar}
